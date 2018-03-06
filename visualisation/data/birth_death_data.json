@@ -1,0 +1,3135 @@
+{
+  "dimension": [
+                 {
+                   "label": "GHO",
+                   "display": "Indicator"
+                 },
+                 {
+                   "label": "PUBLISHSTATE",
+                   "display": "PUBLISH STATES"
+                 },
+                 {
+                   "label": "YEAR",
+                   "display": "Year"
+                 },
+                 {
+                   "label": "REGION",
+                   "display": "WHO region"
+                 },
+                 {
+                   "label": "WORLDBANKINCOMEGROUP",
+                   "display": "World Bank income group"
+                 },
+                 {
+                   "label": "COUNTRY",
+                   "display": "Country"
+                 }
+               ],
+    "fact": [
+              {
+                "dims": {
+                          "COUNTRY": "Afghanistan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "34.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Afghanistan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Albania",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Albania",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Algeria",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "24.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Algeria",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Andorra",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "8.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Andorra",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Angola",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "44.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Angola",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Antigua and Barbuda",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "16.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Antigua and Barbuda",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Argentina",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "16.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Argentina",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Armenia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Armenia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Australia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Australia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Austria",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Austria",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Azerbaijan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "17.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Azerbaijan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bahamas",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bahamas",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bahrain",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bahrain",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "2.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bangladesh",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bangladesh",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Barbados",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Barbados",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Belarus",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Belarus",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Belgium",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Belgium",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Belize",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Belize",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Benin",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Benin",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bhutan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "19.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bhutan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bolivia (Plurinational State of)",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "25.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bolivia (Plurinational State of)",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bosnia and Herzegovina",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bosnia and Herzegovina",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Botswana",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Botswana",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Brazil",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Brazil",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Brunei Darussalam",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Brunei Darussalam",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "3.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bulgaria",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Bulgaria",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Burkina Faso",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "40.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Burkina Faso",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Burundi",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "44.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Burundi",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Côte d'Ivoire",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Côte d'Ivoire",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cabo Verde",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cabo Verde",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cambodia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "25.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cambodia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cameroon",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "37.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cameroon",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Canada",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Canada",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Central African Republic",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "34.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Central African Republic",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Chad",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "45.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Chad",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Chile",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Chile",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "China",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "China",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Colombia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "18.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Colombia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Comoros",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "35.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Comoros",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Congo",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "37.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Congo",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cook Islands",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "14.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cook Islands",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Costa Rica",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Costa Rica",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Croatia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Croatia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cuba",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cuba",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cyprus",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Cyprus",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Czechia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Czechia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Democratic People's Republic of Korea",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Democratic People's Republic of Korea",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Democratic Republic of the Congo",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "42.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Democratic Republic of the Congo",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Denmark",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Denmark",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Djibouti",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "27.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Djibouti",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Dominica",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "15.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Dominica",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Dominican Republic",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Dominican Republic",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ecuador",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ecuador",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Egypt",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Egypt",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "El Salvador",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "El Salvador",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Equatorial Guinea",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "35.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Equatorial Guinea",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Eritrea",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Eritrea",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Estonia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Estonia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ethiopia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "33"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ethiopia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Fiji",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Fiji",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Finland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Finland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "France",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "France",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Gabon",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "31.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Gabon",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Gambia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "42.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Gambia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Georgia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Georgia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Germany",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Germany",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ghana",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "30.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ghana",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Greece",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Greece",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Grenada",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "19.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Grenada",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guatemala",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "31"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guatemala",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guinea",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guinea",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guinea-Bissau",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "37.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guinea-Bissau",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guyana",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Guyana",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Haiti",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "25.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Haiti",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Honduras",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "25.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Honduras",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Hungary",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Hungary",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Iceland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Iceland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "India",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "India",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Indonesia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "18.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Indonesia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Iran (Islamic Republic of)",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "18.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Iran (Islamic Republic of)",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Iraq",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "31.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Iraq",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ireland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ireland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Israel",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Israel",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Italy",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Italy",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Jamaica",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "18"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Jamaica",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Japan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Japan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Jordan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "27"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Jordan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "3.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kazakhstan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kazakhstan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kenya",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "34.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kenya",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kiribati",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kiribati",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kuwait",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kuwait",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "1.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kyrgyzstan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "27.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Kyrgyzstan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lao People's Democratic Republic",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "26.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lao People's Democratic Republic",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Latvia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Latvia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lebanon",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lebanon",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lesotho",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "27.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lesotho",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Liberia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "35.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Liberia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Libya",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Libya",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lithuania",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Lithuania",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Luxembourg",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Luxembourg",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Madagascar",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "34.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Madagascar",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Malawi",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "39.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Malawi",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Malaysia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "17.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Malaysia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Maldives",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "22"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Maldives",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "3.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mali",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "47.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mali",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Malta",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Malta",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Marshall Islands",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "27.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Marshall Islands",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mauritania",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "34.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mauritania",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mauritius",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mauritius",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mexico",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "18.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mexico",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Micronesia (Federated States of)",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Micronesia (Federated States of)",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Monaco",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "6.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Monaco",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mongolia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "22.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mongolia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Montenegro",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Montenegro",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Morocco",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "22.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Morocco",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mozambique",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "38.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Mozambique",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Myanmar",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "17.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Myanmar",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Namibia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "26"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Namibia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nauru",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "26.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nauru",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "3.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nepal",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "21"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nepal",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Netherlands",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Netherlands",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "New Zealand",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "New Zealand",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nicaragua",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "22.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nicaragua",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Niger",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "49.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Niger",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nigeria",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "41.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Nigeria",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Niue",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Norway",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Norway",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Oman",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Oman",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "2.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Pakistan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "25.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Pakistan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Palau",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "10.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Palau",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Panama",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "19.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Panama",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Papua New Guinea",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "28.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Papua New Guinea",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Paraguay",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Paraguay",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Peru",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "19.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Peru",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Philippines",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "24.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Philippines",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Poland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Poland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Portugal",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Portugal",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Qatar",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Qatar",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "1.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Republic of Korea",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Republic of Korea",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Republic of Moldova",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Republic of Moldova",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Romania",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Romania",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Russian Federation",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Russian Federation",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Rwanda",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "35.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Rwanda",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saint Kitts and Nevis",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "13.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saint Kitts and Nevis",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saint Lucia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saint Lucia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saint Vincent and the Grenadines",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "16.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saint Vincent and the Grenadines",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Samoa",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "26.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Samoa",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "San Marino",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Comments": "<a href=\"http://www.census.gov/population/international/data/idb/informationGateway.php\" target=\"_blank\">International data base (IDB) </a>. Washington, DC: United States Census Bureau; 2014  (accessed 15 December 2014).",
+                "Value": "8.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "San Marino",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sao Tome and Principe",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "33.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sao Tome and Principe",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saudi Arabia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "19.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Saudi Arabia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "3.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Senegal",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "37.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Senegal",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Serbia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Serbia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Seychelles",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "16.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Seychelles",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sierra Leone",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sierra Leone",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "16.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Singapore",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Singapore",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Slovakia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Slovakia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Slovenia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Slovenia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Solomon Islands",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "30.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Solomon Islands",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Somalia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "43.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Somalia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "South Africa",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "20.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "South Africa",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "South Sudan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "South Sudan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Spain",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Spain",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sri Lanka",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "17.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sri Lanka",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sudan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "33.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sudan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Suriname",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "17.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Suriname",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Swaziland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "29.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Swaziland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "11.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sweden",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Sweden",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Switzerland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Switzerland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Syrian Arab Republic",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "24"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Syrian Arab Republic",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "3.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tajikistan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "33"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tajikistan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Thailand",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Thailand",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "The former Yugoslav republic of Macedonia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "The former Yugoslav republic of Macedonia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Timor-Leste",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "35.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Timor-Leste",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Togo",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "36.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Togo",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tonga",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "25.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tonga",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Trinidad and Tobago",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Trinidad and Tobago",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tunisia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "17.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tunisia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Turkey",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "16.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Turkey",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Turkmenistan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "21.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Turkmenistan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tuvalu",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "23.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Tuvalu",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Uganda",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "43.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Uganda",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ukraine",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "10.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Ukraine",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United Arab Emirates",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United Arab Emirates",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "1.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United Kingdom of Great Britain and Northern Ireland",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "12.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United Kingdom of Great Britain and Northern Ireland",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.9"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United Republic of Tanzania",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "39.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United Republic of Tanzania",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "7.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United States of America",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "13.2"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "United States of America",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "8.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Uruguay",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "14.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Uruguay",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Uzbekistan",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "21.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Uzbekistan",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.4"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Vanuatu",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "26.6"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Vanuatu",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Venezuela (Bolivarian Republic of)",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "19.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Venezuela (Bolivarian Republic of)",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "4.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Viet Nam",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "15.5"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Viet Nam",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "5.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Yemen",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "31.1"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Yemen",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "6.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Zambia",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "42.8"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Zambia",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.7"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Zimbabwe",
+                          "GHO": "Crude birth rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "31.3"
+              },
+              {
+                "dims": {
+                          "COUNTRY": "Zimbabwe",
+                          "GHO": "Crude death rate (per 1000 population)",
+                          "YEAR": "2013"
+                        },
+                "Value": "9.8"
+              }
+      ]
+}

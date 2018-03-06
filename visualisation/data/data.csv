@@ -1,0 +1,195 @@
+country,birth,death,code
+Afghanistan,34.1,7.7,AFG
+Albania,12.9,9.4,ALB
+Algeria,24.3,5.7,ALG
+Andorra,8.9,8.4,AND
+Angola,44.1,13.9,AGO
+Antigua and Barbuda,16.5,6.8,ATG
+Argentina,16.8,7.6,ARG
+Armenia,13.7,12.6,ARM
+Australia,13.2,6.4,AUS
+Austria,9.5,9,AUT
+Azerbaijan,17.8,6.3,AZE
+Bahamas,15.3,6.1,BHS
+Bahrain,15.2,2.2,BHR
+Bangladesh,20,5.7,BGD
+Barbados,12.7,6.4,BRB
+Belarus,11,13.5,BLR
+Belgium,11.7,9.9,BEL
+Belize,23.4,4,BLZ
+Benin,36.4,9.6,BEN
+Bhutan,19.6,6.5,BTN
+Bolivia (Plurinational State of),25.7,7,BOL
+Bosnia and Herzegovina,9,9.4,BIH
+Botswana,23.6,7.2,BVA
+Brazil,14.9,6.1,BRA
+Brunei Darussalam,15.5,3.6,BRN
+Bulgaria,9.6,14.2,BUL
+Burkina Faso,40.9,9.5,BFA
+Burundi,44.7,11.1,BUR
+Cabo Verde,20.1,5.2,CPV
+Cambodia,25.7,5.7,CHM
+Cameroon,37.3,10.8,CMR
+Canada,11.3,7.2,CAN
+Central African Republic,34.2,14,CAF
+Chad,45.9,13.6,TCD
+Chile,13.9,5.4,CHL
+China,13.3,7.2,CHN
+Colombia,18.8,4.2,COL
+Comoros,35.2,8.2,COM
+Congo,37.6,10.1,COG
+Cook Islands,14.9,5,COK
+Costa Rica,15.1,4.4,CRI
+Côte d'Ivoire,36.6,12.6,CIV
+Croatia,9.5,11.1,HRV
+Cuba,9.5,8.5,CUB
+Cyprus,11.5,5.5,CYP
+Czechia,11.1,10,CZE
+Democratic People's Republic of Korea,14.4,9.2,KOR
+Democratic Republic of the Congo,42.7,13.7,COD
+Denmark,11.3,9.6,DNK
+Djibouti,27.5,8.8,DJI
+Dominica,15.6,7.2,DMA
+Dominican Republic,20.8,5.9,DOM
+Ecuador,20.8,5.3,ECU
+Egypt,23.2,6.4,EGY
+El Salvador,20.1,6.6,SLV
+Equatorial Guinea,35.4,11.5,GNQ
+Eritrea,36.7,6.3,ERI
+Estonia,10.9,11.3,EST
+Ethiopia,33,7.2,ETH
+Fiji,20.4,6.9,FJI
+Finland,11.2,9.4,FIN
+France,12.3,8.7,FRA
+Gabon,31.9,9,GAB
+Gambia,42.7,8.2,GMB
+Georgia,13.3,11.5,GEO
+Germany,8.5,10.6,DEU
+Ghana,30.9,8.1,GHA
+Greece,9.7,9.7,GRC
+Grenada,19.3,6.9,GRD
+Guatemala,31,5.2,GTM
+Guinea,36.9,10.1,GIN
+Guinea-Bissau,37.5,12.3,GNB
+Guyana,20.3,7.9,GUY
+Haiti,25.6,8.6,HTI
+Honduras,25.8,4.5,NHD
+Hungary,9.9,13,HUN
+Iceland,14.5,6.2,ICE
+India,20.4,7.9,IND
+Indonesia,18.8,6.2,IDN
+Iran (Islamic Republic of),18.8,5.1,IRN
+Iraq,31.1,4.8,IRQ
+Ireland,15.4,5.9,IRL
+Israel,20.3,5.1,ISR
+Italy,9.2,9.5,ITA
+Jamaica,18,7.1,JAM
+Japan,8.4,9.5,JPN
+Jordan,27,3.7,JOR
+Kazakhstan,20.5,9.7,KAZ
+Kenya,34.9,8.3,KEN
+Kiribati,23.3,8.2,KIR
+Kuwait,20.6,1.9,KWT
+Kyrgyzstan,27.1,6.6,KGZ
+Lao People's Democratic Republic,26.8,6.7,LAO
+Latvia,11,14.2,LVA
+Lebanon,13.4,4.4,LBN
+Lesotho,27.5,14.1,LSO
+Liberia,35.5,8,LBR
+Libya,20.7,4.2,LBY
+Lithuania,11.3,12,LTU
+Luxembourg,11.6,6.8,LUX
+Madagascar,34.7,7,MDG
+Malawi,39.8,9,MWI
+Malaysia,17.7,5,MYS
+Maldives,22,3.5,MDV
+Mali,47.1,11.2,MLI
+Malta,9.2,7.5,MLT
+Marshall Islands,27.2,6.6,MHL
+Mauritania,34.1,7.8,MRT
+Mauritius,11.5,7.4,MUS
+Mexico,18.4,5.3,MEX
+Micronesia (Federated States of),23.5,6.1,FSM
+Monaco,6.8,8.7,MCO
+Mongolia,22.7,6.7,PRK
+Montenegro,11.6,9.5,MNE
+Morocco,22.7,6.4,MAR
+Mozambique,38.9,11.8,MOZ
+Myanmar,17.2,8.4,MMR
+Namibia,26,5.7,NAM
+Nauru,26.4,3.5,ZMB
+Nepal,21,6.6,NPL
+Netherlands,10.7,8.3,NLD
+New Zealand,13.8,6.3,NZL
+Nicaragua,22.7,4.8,NIC
+Niger,49.7,10.2,NER
+Nigeria,41.2,11.9,NGA
+Niue,30.1,5.9,NIU
+Norway,12.4,8.1,NOR
+Oman,20.9,2.8,OMN
+Pakistan,25.2,7.3,PAK
+Palau,10.9,5.9,HND
+Panama,19.4,5,PAN
+Papua New Guinea,28.9,7.7,PNG
+Paraguay,23.7,4.8,PRY
+Peru,19.7,4.4,PER
+Philippines,24.4,5.9,PHL
+Poland,10.8,10,MYS
+Portugal,8.7,9.1,PAN
+Qatar,11,1.3,QAT
+Republic of Korea,9.6,5.5,KOR
+Republic of Moldova,12.1,12.4,MDA
+Romania,10.3,11.8,ROU
+Russian Federation,11.8,14.8,RUS
+Rwanda,35.2,6.4,RWA
+Saint Kitts and Nevis,13.8,8.5,KNA
+Saint Lucia,15.4,7,LCA
+Saint Vincent and the Grenadines,16.3,6.5,VCT
+Samoa,26.2,5.2,WSM
+San Marino,8.8,10.2,SMR
+Sao Tome and Principe,33.9,6.5,STP
+Saudi Arabia,19.4,3.2,SAU
+Senegal,37.7,7,SEN
+Serbia,9.7,11.9,SRB
+Seychelles,16.6,6.7,SYC
+Sierra Leone,36.6,16.8,SLE
+Singapore,9.9,4.5,SGP
+Slovakia,10.7,9.4,SVK
+Slovenia,10,9.1,SVN
+Solomon Islands,30.8,5.4,SLB
+Somalia,43.8,12.7,SOM
+South Africa,20.9,11.1,ZAF
+South Sudan,36.1,11.1,SSD
+Spain,10.4,8.2,ESP
+Sri Lanka,17.9,6.6,LKA
+Sudan,33.5,7.8,SDN
+Suriname,17.7,4.6,SUR
+Swaziland,29.9,11.8,SWZ
+Sweden,12,9.6,SWE
+Switzerland,10.4,7.7,CHE
+Syrian Arab Republic,24,3.5,SYR
+Tajikistan,33,6,TJK
+Thailand,10.2,7.6,THA
+The former Yugoslav republic of Macedonia,10.7,9.4,MKD
+Timor-Leste,35.8,6,TLS
+Togo,36.4,9.6,TGO
+Tonga,25.5,6.7,TON
+Trinidad and Tobago,14.5,9.6,TTO
+Tunisia,17.2,5.5,TUN
+Turkey,16.8,5.7,TUR
+Turkmenistan,21.3,8.8,TKM
+Tuvalu,23.6,8.7,TUV
+Uganda,43.2,9.2,UGA
+Ukraine,10.8,15.1,UKR
+United Arab Emirates,14.5,1.1,ARE
+United Kingdom of Great Britain and Northern Ireland,12.2,8.9,GBR
+United Republic of Tanzania,39.2,7.8,TZA
+United States of America,13.2,8.4,USA
+Uruguay,14.5,9.1,URY
+Uzbekistan,21.5,6.4,UZB
+Vanuatu,26.6,4.5,VUT
+Venezuela (Bolivarian Republic of),19.8,4.8,VEN
+Viet Nam,15.5,5.8,VNM
+Yemen,31.1,6.7,YEM
+Zambia,42.8,9.7,ZMB
+Zimbabwe,31.3,9.8,ZWE
