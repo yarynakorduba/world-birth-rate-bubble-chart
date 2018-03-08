@@ -23,7 +23,7 @@ var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([6, 30]);
  var header = d3.select("body")
     .append("header")
     .append("h3")
-    .text("Countries birth rate visualization per 1000 population in comparison");
+    .text("Countries birth rate visualization per 1000 population");
 
  var svg = d3.select("body")
     .append("svg")
@@ -35,7 +35,7 @@ var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([6, 30]);
 
 var simulation = forceSimulation()
     .force("x", d3.forceX(width / 2 + 100).strength(0.05))
-    .force("y", d3.forceY(diameter / 2-110).strength(0.05))
+    .force("y", d3.forceY(diameter / 2-105).strength(0.05))
     .force("collide", d3.forceCollide(
         function(d) {
             return scaleRadius(d.birth);

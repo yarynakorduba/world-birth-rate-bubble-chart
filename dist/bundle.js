@@ -9605,7 +9605,7 @@ var scaleRadius = __WEBPACK_IMPORTED_MODULE_0_d3__["h" /* scaleSqrt */]().domain
  var header = __WEBPACK_IMPORTED_MODULE_0_d3__["i" /* select */]("body")
     .append("header")
     .append("h3")
-    .text("Countries birth rate visualization per 1000 population in comparison");
+    .text("Countries birth rate visualization per 1000 population");
 
  var svg = __WEBPACK_IMPORTED_MODULE_0_d3__["i" /* select */]("body")
     .append("svg")
@@ -9617,7 +9617,7 @@ var scaleRadius = __WEBPACK_IMPORTED_MODULE_0_d3__["h" /* scaleSqrt */]().domain
 
 var simulation = Object(__WEBPACK_IMPORTED_MODULE_3_d3_force__["b" /* forceSimulation */])()
     .force("x", __WEBPACK_IMPORTED_MODULE_0_d3__["d" /* forceX */](width / 2 + 100).strength(0.05))
-    .force("y", __WEBPACK_IMPORTED_MODULE_0_d3__["e" /* forceY */](diameter / 2-110).strength(0.05))
+    .force("y", __WEBPACK_IMPORTED_MODULE_0_d3__["e" /* forceY */](diameter / 2-105).strength(0.05))
     .force("collide", __WEBPACK_IMPORTED_MODULE_0_d3__["c" /* forceCollide */](
         function(d) {
             return scaleRadius(d.birth);
