@@ -1,27 +1,29 @@
 import * as d3 from "d3";
 import * as scale from "d3-scale";
-
-// d3.tip = tip;
-
+import {  sort } from "d3-array";
 import { forceSimulation } from "d3-force";
+import { format } from "d3-format";
 
- // import { nodes, max, min, pack, hierarchy, select, selectAll, csv, extent, scaleLinear } from "d3";
 
-    var diameter = 800; //max size of the bubbles
-    var width =1000;
+var diameter = 800; //max height
+var width =800;
 
-    // var color = d3.scaleSequential(d3.interpolateRainbow); //color category
-
+var f = d3.format("d");
 
 var color = d3.scaleLinear()
     .domain([0, 50])
     .range(["#90CAF9", "#0D47A1"]);
 
-var textscale = d3.scaleLinear()
-    .domain([6, 50]).range([10, 14]);
+var textscale = d3.scaleSqrt()
+    .domain([6, 50]).range([7, 13]);
 
-var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([6, 40]);
+var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([6, 30]);
 
+ 
+ var header = d3.select("body")
+    .append("header")
+    .append("h3")
+    .text("Countries birth rate visualization per 1000 population in comparison");
 
  var svg = d3.select("body")
     .append("svg")
@@ -32,53 +34,46 @@ var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([6, 40]);
     .attr("class", "bubble");
 
 var simulation = forceSimulation()
-    .force("x", d3.forceX(width / 2).strength(0.05))
-    .force("y", d3.forceY(diameter / 2).strength(0.05))
+    .force("x", d3.forceX(width / 2 + 100).strength(0.05))
+    .force("y", d3.forceY(diameter / 2-110).strength(0.05))
     .force("collide", d3.forceCollide(
         function(d) {
             return scaleRadius(d.birth);
         }));
 
 
-//var data = [4, 8, 15, 16, 23, 42];
-
 d3.csv("/data/data.csv", function(data) {
 
     let tooltip = d3.select("body").append("div")
             .attr("class", "tooltip")
-            .style("opacity", 0);
+            .style("display", "none");
 
 
     var circles = svg.selectAll("country")
         .data(data)
         .enter().append("circle")
         .attr("class", "country")
-        .attr("r", function(d) { 
+        .attr("r", function(d) {
             return scaleRadius(d.birth)})
-        // .attr("fill", color)
         .on("click mouseenter mouseover focus", function(d) {
             console.log(d.country);
-            // tooltip.transition()
-            // .duration(5)  
-            //     .style("opacity", 0);
-            tooltip.transition()
+
+        tooltip.transition()
                 .duration(2)  
-                .style("opacity", .9);  
-            tooltip.html("country " + d.country + "\n" + d.birth)
+                .style("opacity", .9)
+                .style("display", "block");  
+
+        tooltip.html("country " + d.country + "\n" + d.birth)
             .style("left", (d3.event.pageX) + "px")
             .style("top", d3.event.pageY + "px");
         })
         .on("mouseout", function(d) {
-            tooltip.transition().style("opacity", 0);
+            tooltip.transition().style("display", "none");
+            d3.select(this).style("stroke-opacity", "0");
         })
-        // .on("click", function(d) {
-        //     console.log(d);
-        //     alert(d.country);
-        // })
         .style("fill", function(d) { 
         return color(d.birth); 
-      })
-        ;
+      });
 
     var text =svg.selectAll("country")
         .data(data)
@@ -88,29 +83,27 @@ d3.csv("/data/data.csv", function(data) {
         .text(function(d) {
             return d.code;
         })
-        .on(" click mouseenter mouseover focus", function(d) {
-            tooltip.transition()
+        .attr("font-size", function(d) { 
+            console.log(f(textscale(d.birth)));
+            return f(textscale(d.birth));
+        })
+        .on("click mouseenter mouseover focus", function(d) {
+            tooltip
+            .transition()
                 .duration(2)  
-                .style("opacity", .9);  
+                .style("opacity", .9)
+                .style("display", "block");  
             tooltip.html("country " + d.country + "\n" + d.birth)
             .style("left", (d3.event.pageX) + "px")
             .style("top", d3.event.pageY + "px");
         })
         .on("mouseout", function(d) {
-            tooltip.transition().style("opacity", 0);
+            tooltip.transition().style("display", "none");
         })
-        // .on("click", function(d) {
-        //     console.log(d);
-        //     alert(d.country);
-        // })
-        .attr("font-size", 11)
         .attr("fill", "white");
-
 
     simulation.nodes(data)
         .on("tick", ticked);
-
-
 
     function ticked() {
         circles
@@ -124,7 +117,7 @@ d3.csv("/data/data.csv", function(data) {
 
         text
         .attr("x", function(d) {
-            return d.x-7;
+            return d.x-12;
         })
         .attr("y", function(d) {
             return d.y+5;
@@ -132,12 +125,29 @@ d3.csv("/data/data.csv", function(data) {
     }
 
 
+    function sortingOrder(data) {
+        return data.sort(function (a, b) {
+            return +a.birth - b.birth;
+    });
+    };
 
+    var maxmin = d3.select("body")
+        .data(data)
+        .append("div")
+        .attr("class", "maxmin");
 
+    var maxminhead = maxmin.append("h3").text("Bound birth rate values:")
 
-    console.log(data[1]);
-
-
+    var max = maxmin.append("div").attr("class", "maxminval")
+        .text(function(d) {
+            return "maximal value: " + sortingOrder(data)[data.length-1].country +
+            " " + sortingOrder(data)[data.length-1].birth + '\n';
+            });
+    var min = maxmin.append("div").attr("class", "maxminval ")
+        .text(function(d) {
+            return "\nminimal value: " + sortingOrder(data)[0].country + " " +
+            sortingOrder(data)[0].birth;
+            });
 
 });
 

@@ -12,7 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "d3": "^4.13.0",
+    "d3-array": "^1.2.1",
+    "d3-comparator": "^0.1.0",
     "d3-force": "^1.1.0",
+    "d3-format": "^1.2.2",
     "d3-hierarchy": "^1.1.5",
     "d3-scale-chromatic": "^1.2.0",
     "d3-tip": "^0.7.1",

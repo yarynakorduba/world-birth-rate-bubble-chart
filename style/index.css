@@ -8,6 +8,23 @@ div.tooltip {
   background: white;	
   border: 2px solid #999;
   border-radius: 7px;
+  font-size: 11px;
  /*  pointer-events: none;	This line needs to be removed */
-	
+}
+
+header {
+	color: #010048;
+	text-align: center;
+}
+
+div.maxmin {
+	width: 400px;
+	float: right;
+	padding-right: 5%;
+	height: 100px;
+	color: #010048;
+}
+
+div.maxminval {
+	display: block;
 }
