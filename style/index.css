@@ -28,3 +28,14 @@ div.maxmin {
 div.maxminval {
 	display: block;
 }
+
+div.info {
+	margin-top: 15px;
+	color: #777;
+	font-size: 12px;
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+}

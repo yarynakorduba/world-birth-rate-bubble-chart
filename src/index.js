@@ -143,12 +143,18 @@ d3.csv("/data/data.csv", function(data) {
             return "maximal value: " + sortingOrder(data)[data.length-1].country +
             " " + sortingOrder(data)[data.length-1].birth + '\n';
             });
-    var min = maxmin.append("div").attr("class", "maxminval ")
+    var min = maxmin.append("div").attr("class", "maxminval")
         .text(function(d) {
-            return "\nminimal value: " + sortingOrder(data)[0].country + " " +
+            return "minimal value: " + sortingOrder(data)[0].country + " " +
             sortingOrder(data)[0].birth;
             });
 
+    var datainfo = maxmin.append("div").attr("class", "info")
+        .text( "Data for visualization was taken from ");
+        datainfo.append("a")
+            .attr("href", "http://www.color-hex.com/color/0d47c8")
+            .text("World Health Organization");
+        
 });
 
  
