@@ -1,4 +1,4 @@
-div.tooltip {
+.container__tooltip {
   position: absolute;	
   text-align: center;	
   width: 80px;	
@@ -9,15 +9,14 @@ div.tooltip {
   border: 2px solid #999;
   border-radius: 7px;
   font-size: 11px;
- /*  pointer-events: none;	This line needs to be removed */
 }
 
-header {
+.container__header {
 	color: #010048;
 	text-align: center;
 }
 
-div.maxmin {
+.info {
 	width: 400px;
 	float: right;
 	padding-right: 5%;
@@ -25,17 +24,17 @@ div.maxmin {
 	color: #010048;
 }
 
-div.maxminval {
+.info__caption {
 	display: block;
 }
 
-div.info {
+.info__ref {
 	margin-top: 15px;
 	color: #777;
 	font-size: 12px;
 	font-style: italic;
 }
 
-a {
+.info__link {
 	text-decoration: none;
 }

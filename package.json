@@ -1,5 +1,5 @@
 {
-  "name": "visualisation",
+  "name": "vis-rep",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -18,12 +18,11 @@
     "d3-format": "^1.2.2",
     "d3-hierarchy": "^1.1.5",
     "d3-scale-chromatic": "^1.2.0",
-    "d3-tip": "^0.7.1",
-    "d3-world-maps": "0.0.3",
-    "jquery": "^3.3.1",
-    "topojson": "^3.0.2"
+    "d3-tip": "^0.7.1"
   },
   "devDependencies": {
-    "serve": "^6.5.1"
+    "serve": "^6.5.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
   }
 }
