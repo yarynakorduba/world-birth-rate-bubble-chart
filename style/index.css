@@ -1,3 +1,11 @@
+.container__header {
+	color: #010048;
+	text-align: center;
+	display: block;
+}
+
+
+
 .container__tooltip {
   position: absolute;	
   text-align: center;	
@@ -8,28 +16,39 @@
   background: white;	
   border: 2px solid #999;
   border-radius: 7px;
-  font-size: 11px;
+  font-size: 13px;
 }
 
-.container__header {
+.container__regionname {
+	background: white;
+	border-radius: 10%;
+	visibility: 0.7;
+	font-size: 16px;
 	color: #010048;
-	text-align: center;
 }
+
 
 .info {
-	width: 400px;
-	float: right;
-	padding-right: 5%;
-	height: 100px;
+	/*width: 400px;*/
+	/*padding-right: 5%;*/
+	/*height: 100px;*/
 	color: #010048;
+	text-align: center;
+	/*position: fixed;*/
+	background: white;
+	border-radius: 5%;
+	margin-bottom: 10px;
+	/*bottom: 0px;*/
+	/*right: 10px;*/
+	
 }
 
-.info__caption {
-	display: block;
+.info__value {
+	display: inline;
 }
 
 .info__ref {
-	margin-top: 15px;
+	/*margin-top: 15px;*/
 	color: #777;
 	font-size: 12px;
 	font-style: italic;
