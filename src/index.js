@@ -59,6 +59,13 @@ d3.queue()
     .await(ready);
 
 function ready(error, topology, data) {
+    var rateById = {};
+
+    // data.forEach(function(d) {
+    //     rateById[d.country] = +d.birth;
+    // });
+
+
         console.log(topology);
         var geojson = topojson.feature(topology, topology.objects.countries1);
 
@@ -67,7 +74,13 @@ function ready(error, topology, data) {
             .enter().append("path")
             .attr("d", path)
             .attr("class", "container__path")
-            .attr("opacity", "0");
+            .attr("opacity", "0")
+            // .style("fill", function(d) {
+            //     return colorScale(rateById[d.properties.name]);
+            // })
+        ;
+
+
 
         var interiors = topojson.mesh(topology, topology.objects.countries1, function (a, b) {
             return a !== b;
@@ -174,12 +187,12 @@ function ready(error, topology, data) {
             .attr("fill", "white");
 
         var simulation = forceSimulation(height / 2 - 105)
-            .force("x", ForceXCombine.strength(0.07))
-            .force("y", ForceYCombine.strength(0.07))
+            .force("x", ForceXCombine)
+            .force("y", ForceYCombine)
             .force("collide", d3.forceCollide(
                 function (d) {
                     return scaleRadius(d.birth);
-                }));
+                })).alpha(0.4);
 
 //The box with information
         var maxmin = header.data(data)
@@ -219,7 +232,9 @@ function ready(error, topology, data) {
         country_divide.on("click", function () {
             text.attr("opacity" ,"0");
             map.attr("opacity", "1");
-
+            // map.data(data).style("fill", function (d) {
+            //     return colorScale(d.birth);
+            // });
             circles.attr("r", function (d) {
             return scaleMapRadius(d.birth);
         }).attr("opacity", "0.9");
@@ -231,7 +246,7 @@ function ready(error, topology, data) {
             function (d) {
                 return scaleMapRadius(d.birth)-1;
             }))
-        .alpha(0.8)
+        .alpha(0.5)
         .restart();
         svg.selectAll(".container__regionname").attr("display", "none");
 });
@@ -254,9 +269,9 @@ function ready(error, topology, data) {
                 .force("y", forceYDivide)
                 .force("collide", d3.forceCollide(
                     function (d) {
-                        return scaleRadius(d.birth)+1;
+                        return scaleRadius(d.birth);
                     }))
-                .alpha(0.7)
+                .alpha(0.5)
                 .restart();
 
             svg.selectAll(".container__regionname").attr("display", "inline");
@@ -280,9 +295,9 @@ function ready(error, topology, data) {
                 .force("y", ForceYCombine)
                 .force("collide", d3.forceCollide(
                     function (d) {
-                        return scaleRadius(d.birth)+1;
+                        return scaleRadius(d.birth);
                     }))
-                .alpha(0.7)
+                .alpha(0.4)
                 .restart();
 
             svg.selectAll(".container__regionname").attr("display", "none");
