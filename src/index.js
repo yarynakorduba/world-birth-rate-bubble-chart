@@ -7,9 +7,9 @@ import { geoPath } from "d3-geo";
 import * as topojson from 'topojson';
 
 
-var margin = {top: 50, left: 50, right: 50, bottom: 50};
-var height = 700 - margin.top - margin.bottom;
-var width = 1200 - margin.left -margin.right;
+var margin = {top: 0, left: 20, right: 20, bottom: 0};
+var height = window.innerHeight - margin.top - margin.bottom;
+var width = window.innerWidth - margin.left -margin.right;
 
 var f = d3.format("d");
 
@@ -23,12 +23,44 @@ var scaleMapRadius = d3.scaleSqrt().domain([6, 50]).range([3, 10]);
 
 
 var ForceXCombine = d3.forceX(width / 2);
-var ForceYCombine = d3.forceY(height / 2);
+var ForceYCombine = d3.forceY(height / 2+20);
 
 
  var container = d3.select("body")
     .append("div")
     .attr("class", "container");
+
+
+var hidden_header = false;
+
+var headerbtn = container.append("button")
+    .attr("class", "container__button")
+    .text("Hide legend")
+    .on("click", function() {
+        hidden_header = hidden_header ? false : true;
+        header.style("opacity", function() {
+            return (hidden_header ? 0 : 1);
+        }).style("-webkit-transition", "opacity 1s");
+        d3.select(this).text(function() {
+            return (hidden_header ? "Show legend" : "Hide legend");
+        });
+    });
+
+var divide = container.append("button")
+    .attr("id", "divide")
+    .attr("class", "container__button");
+divide.text("By region");
+
+var country_divide = container.append("button")
+    .attr("id", "country_divide")
+    .attr("class", "container__button");
+country_divide.text("On a map");
+
+var combine = container.append("button")
+    .attr("id", "combine")
+    .attr("class", "container__button");
+combine.text("All");
+
 
 
  var header = container
@@ -39,17 +71,18 @@ var ForceYCombine = d3.forceY(height / 2);
          .text("Countries birth rate visualization per 1000 population");
 
 
+
  var svg = container.append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("class", "container__svg")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    //.attr("transform", translate(width, height))
     .append("g")
     .attr("class", "container__bubble");
 
 var projection = d3.geoMercator()
-    .scale(100)
-    .translate([width / 2, height / 2]);
+    .scale(120)
+    .translate([width / 2, height / 2+100]);
 
 var path = d3.geoPath().projection(projection);
 
@@ -61,9 +94,6 @@ d3.queue()
 function ready(error, topology, data) {
     var rateById = {};
 
-    // data.forEach(function(d) {
-    //     rateById[d.country] = +d.birth;
-    // });
 
 
         console.log(topology);
@@ -74,11 +104,7 @@ function ready(error, topology, data) {
             .enter().append("path")
             .attr("d", path)
             .attr("class", "container__path")
-            .attr("opacity", "0")
-            // .style("fill", function(d) {
-            //     return colorScale(rateById[d.properties.name]);
-            // })
-        ;
+            .attr("opacity", "0");
 
 
 
@@ -115,9 +141,9 @@ function ready(error, topology, data) {
     var forceYDivide = d3.forceY(function (d) {
         switch (d.region) {
             case 'Africa':
-                return 1 / 3 * height+10;
+                return 1 / 3 * height+40;
             case 'America':
-                return 2 / 3 * height+10;
+                return 2 / 3 * height+60;
             case 'Asia':
                 return 1 / 3 * height+10;
             case 'Europe':
@@ -186,7 +212,7 @@ function ready(error, topology, data) {
             })
             .attr("fill", "white");
 
-        var simulation = forceSimulation(height / 2 - 105)
+        var simulation = forceSimulation()
             .force("x", ForceXCombine)
             .force("y", ForceYCombine)
             .force("collide", d3.forceCollide(
@@ -224,10 +250,7 @@ function ready(error, topology, data) {
             .text("World Health Organization");
 //End of the box with information
 
-    var country_divide = header.append("button")
-        .attr("id", "country_divide")
-        .attr("class", "container__button");
-        country_divide.text("On a map");
+
 
         country_divide.on("click", function () {
             text.attr("opacity" ,"0");
@@ -252,10 +275,7 @@ function ready(error, topology, data) {
 });
 
 //Button for common displaying
-        var divide = header.append("button")
-            .attr("id", "divide")
-            .attr("class", "container__button");
-        divide.text("By region");
+
 
 
         divide.on("click", function () {
@@ -278,10 +298,7 @@ function ready(error, topology, data) {
         });
 
 //Button for displaying by regions
-        var combine = header.append("button")
-            .attr("id", "combine")
-            .attr("class", "container__button");
-        combine.text("All");
+
 
         combine.on("click", function () {
             map.attr("opacity", "0");
@@ -343,7 +360,7 @@ var text_region = d3.csv("/data/regions.csv", function(data) {
         .append("text")
         .attr("class", "container__regionname")
         .attr("transform", function (d) {
-            return "translate(" + d.posx*width + "," + d.posy*height + ")";
+            return "translate(" + d.posx*width + "," + d.posy*height+40 + ")";
         })
         .text(function(d) {
             return d.region;
