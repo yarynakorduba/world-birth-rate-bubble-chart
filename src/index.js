@@ -3,23 +3,24 @@ import * as scale from "d3-scale";
 import {  sort } from "d3-array";
 import { forceSimulation } from "d3-force";
 import { format } from "d3-format";
+import { geoAitoff } from "d3-geo-projection";
 import { geoPath } from "d3-geo";
 import * as topojson from 'topojson';
 
 
 var margin = {top: 0, left: 20, right: 20, bottom: 0};
 var height = window.innerHeight - margin.top - margin.bottom;
-var width = window.innerWidth - margin.left -margin.right;
+var width = window.innerWidth - margin.left - margin.right;
 
 var f = d3.format("d");
 
 var colorScale = d3.scaleLinear()
     .domain([0, 50])
-    .range(["#6495ED", "#180f74"]);
+    .range(["#69a2ff", "#000095"]);
 var textscale = d3.scaleSqrt()
     .domain([6, 50]).range([7, 13]);
 var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([4, 30]);
-var scaleMapRadius = d3.scaleSqrt().domain([6, 50]).range([3, 10]);
+var scaleMapRadius = d3.scaleSqrt().domain([6, 50]).range([3, 8]);
 
 
 var ForceXCombine = d3.forceX(width / 2);
@@ -31,20 +32,9 @@ var ForceYCombine = d3.forceY(height / 2+20);
     .attr("class", "container");
 
 
-var hidden_header = false;
 
-var headerbtn = container.append("button")
-    .attr("class", "container__button")
-    .text("Hide legend")
-    .on("click", function() {
-        hidden_header = hidden_header ? false : true;
-        header.style("opacity", function() {
-            return (hidden_header ? 0 : 1);
-        }).style("-webkit-transition", "opacity 1s");
-        d3.select(this).text(function() {
-            return (hidden_header ? "Show legend" : "Hide legend");
-        });
-    });
+
+var hidden_header = false;
 
 var divide = container.append("button")
     .attr("id", "divide")
@@ -62,11 +52,44 @@ var combine = container.append("button")
 combine.text("All");
 
 
+var headerbtn = container.append("button")
+    .attr("class", "container__button")
+    .attr("id", "legendButton")
+    .text("Hide legend")
+    .on("click", function() {
+        hidden_header = hidden_header ? false : true;
+        header.style("opacity", function() {
+            return (hidden_header ? 0 : 1);
+        }).style("-webkit-transition", "opacity 1s");
+        d3.select(this).text(function() {
+            return (hidden_header ? "Show legend" : "Hide legend");
+        });
+    });
+
+let tooltip = container.append("div")
+    .attr("class", "container__tooltip")
+    .style("display", "none");
+
+
+var makeTooltip = function (country, birth, state) {
+    tooltip.html("country " + country + "\n" + birth)
+        .style("left", (d3.event.pageX) + "px")
+        .style("top", d3.event.pageY + "px");
+    if (state === "show") {
+
+        tooltip
+            .transition()
+            .duration(2)
+            .style("opacity", .9)
+            .style("display", "block");
+    }
+    else { tooltip.transition().style("display", "none");
+    }
+};
 
  var header = container
     .append("header")
     .attr("class", "container__header");
-
      header.append("h3")
          .text("Countries birth rate visualization per 1000 population");
 
@@ -76,13 +99,12 @@ combine.text("All");
     .attr("width", width)
     .attr("height", height)
     .attr("class", "container__svg")
-    //.attr("transform", translate(width, height))
     .append("g")
     .attr("class", "container__bubble");
 
-var projection = d3.geoMercator()
-    .scale(120)
-    .translate([width / 2, height / 2+100]);
+var projection = geoAitoff()
+    .scale(220)
+    .translate([width / 2, height / 2+50]);
 
 var path = d3.geoPath().projection(projection);
 
@@ -92,19 +114,49 @@ d3.queue()
     .await(ready);
 
 function ready(error, topology, data) {
-    var rateById = {};
+    var rateById = {}; //dictionary
+    var codeById = {};
+    var latById = {};
+    var longById = {};
 
+    data.forEach(function(data) {
+        rateById[data.country] = +data.birth;
+        codeById[data.country] = data.code;
+        latById[data.country] = +data.lat;
+        longById[data.country] = +data.long;
+    });
 
-
-        console.log(topology);
-        var geojson = topojson.feature(topology, topology.objects.countries1);
+     var geojson = topojson.feature(topology, topology.objects.countries1);
 
         var map = svg.selectAll("path")
             .data(geojson.features)
             .enter().append("path")
             .attr("d", path)
             .attr("class", "container__path")
+            .attr("id", function (d) {
+                d.properties.name;
+            })
             .attr("opacity", "0");
+            map.on("click mouseenter mouseover focus", function(d) {
+                return makeTooltip(d.properties.name, rateById[d.properties.name], "show");
+            })
+            .on("mouseout", function (d) {
+                return makeTooltip(d.properties.name, rateById[d.properties.name], "hide");
+            });
+
+        var pathlabel = svg.selectAll(".path-label")
+        .data(geojson.features)
+        .enter().append("text")
+        .attr("class", "country__pathlabel")
+        .attr("transform", function(d) {
+            if (longById[d.properties.name]) {
+            return "translate(" +
+            projection([longById[d.properties.name], latById[d.properties.name]]) + ")"; }})
+        .attr("dy", ".15em")
+        .text(function(d) { return codeById[d.properties.name]; })
+            .attr("font-size", "8")
+            .attr("opacity", "0");
+
 
 
 
@@ -113,14 +165,11 @@ function ready(error, topology, data) {
         });
 
     var forceXCountryDivide = d3.forceX(function (d) {
-        var x_projected = projection([d.long, d.lat]);
-        console.log(d.country + " " + x_projected[0] + ", " + x_projected[1]);
-        return x_projected[0];
+        return projection([d.long, d.lat])[0];
     });
 
     var forceYCountryDivide = d3.forceY(function (d) {
-        var y_projected = projection([d.long, d.lat]);
-        return y_projected[1];
+        return projection([d.long, d.lat])[1];
     });
 
     var forceXDivide = d3.forceX(function (d) {
@@ -153,9 +202,6 @@ function ready(error, topology, data) {
         }
     });
 
-        let tooltip = container.append("div")
-            .attr("class", "container__tooltip")
-            .style("display", "none");
 
 
         var circles = svg.selectAll("country")
@@ -165,20 +211,10 @@ function ready(error, topology, data) {
             .attr("r", function (d) {
                 return scaleRadius(d.birth)
             })
-            .on("click mouseenter mouseover focus", function (d) {
-
-                tooltip.transition()
-                    .duration(2)
-                    .style("opacity", .9)
-                    .style("display", "block");
-
-                tooltip.html("country " + d.country + "\n" + d.birth)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", d3.event.pageY + "px");
-            })
+            .on("click mouseenter mouseover focus", function(d) {
+                return makeTooltip(d.country, d.birth, "show");})
             .on("mouseout", function (d) {
-                tooltip.transition().style("display", "none");
-                d3.select(this).style("stroke-opacity", "0");
+                return makeTooltip(d.country, d.birth, "hide");
             });
 
 
@@ -197,18 +233,10 @@ function ready(error, topology, data) {
             .attr("font-size", function (d) {
                 return f(textscale(d.birth));
             })
-            .on("click mouseenter mouseover focus", function (d) {
-                tooltip
-                    .transition()
-                    .duration(2)
-                    .style("opacity", .9)
-                    .style("display", "block");
-                tooltip.html("country " + d.country + "\n" + d.birth)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", d3.event.pageY + "px");
-            })
+            .on("click mouseenter mouseover focus", function(d) {
+                return makeTooltip(d.country, d.birth, "show");})
             .on("mouseout", function (d) {
-                tooltip.transition().style("display", "none");
+                return makeTooltip(d.country, d.birth, "hide");
             })
             .attr("fill", "white");
 
@@ -255,12 +283,9 @@ function ready(error, topology, data) {
         country_divide.on("click", function () {
             text.attr("opacity" ,"0");
             map.attr("opacity", "1");
-            // map.data(data).style("fill", function (d) {
-            //     return colorScale(d.birth);
-            // });
             circles.attr("r", function (d) {
             return scaleMapRadius(d.birth);
-        }).attr("opacity", "0.9");
+        });
 
     simulation
         .force("x", forceXCountryDivide)
@@ -271,8 +296,25 @@ function ready(error, topology, data) {
             }))
         .alpha(0.5)
         .restart();
-        svg.selectAll(".container__regionname").attr("display", "none");
+
+        d3.timeout(stylemap,500);
+        d3.timeout(stylecircles,1000);
+
+
 });
+    var stylecircles = function () {
+
+        circles.transition().duration(1000).attr("opacity", "0");
+    };
+
+    var stylemap = function() {
+        map.transition().duration(1500).style("fill", function (d) {
+            return colorScale(rateById[d.properties.name]);
+        });
+        pathlabel.attr("opacity", "1");
+        svg.selectAll(".container__regionname").attr("display", "none");
+    };
+
 
 //Button for common displaying
 
@@ -281,6 +323,8 @@ function ready(error, topology, data) {
         divide.on("click", function () {
             text.attr("opacity" ,"1");
             map.attr("opacity", "0");
+            pathlabel.attr("opacity", "0");
+
             circles.attr("r", function (d) {
                 return scaleRadius(d.birth);
             }).attr("opacity", "1");
@@ -294,6 +338,7 @@ function ready(error, topology, data) {
                 .alpha(0.5)
                 .restart();
 
+            map.style("fill", "#cccccc");
             svg.selectAll(".container__regionname").attr("display", "inline");
         });
 
@@ -303,6 +348,8 @@ function ready(error, topology, data) {
         combine.on("click", function () {
             map.attr("opacity", "0");
             text.attr("opacity" ,"1");
+            pathlabel.attr("opacity", "0");
+
             circles.attr("r", function (d) {
                 return scaleRadius(d.birth);
             }).attr("opacity", "1");
@@ -317,6 +364,7 @@ function ready(error, topology, data) {
                 .alpha(0.4)
                 .restart();
 
+            map.style("fill", "#cccccc");
             svg.selectAll(".container__regionname").attr("display", "none");
         });
 
@@ -360,7 +408,8 @@ var text_region = d3.csv("/data/regions.csv", function(data) {
         .append("text")
         .attr("class", "container__regionname")
         .attr("transform", function (d) {
-            return "translate(" + d.posx*width + "," + d.posy*height+40 + ")";
+            console.log(d.region + " " + d.posx*width + " " + d.posy*height);
+            return "translate(" + Math.round(d.posx*width) + "," + Math.round(d.posy*height) + ")";
         })
         .text(function(d) {
             return d.region;
