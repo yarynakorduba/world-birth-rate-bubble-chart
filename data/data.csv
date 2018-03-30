@@ -45,7 +45,7 @@ Croatia,9.5,HRV,Europe,45.1667,15.5
 Cuba,9.5,CUB,America,21.5,-80
 Cyprus,11.5,CYP,Europe,35,33
 Czech Republic,11.1,CZE,Europe,49.75,15.5
-North Korea,14.4,KOR,Asia,40,127
+North Korea,14.4,PRK,Asia,40,127
 Democratic Republic of the Congo,42.7,COD,Africa,0,25
 Denmark,11.3,DNK,Europe,56,10
 Djibouti,27.5,DJI,Africa,11.5,43
@@ -193,6 +193,7 @@ Uzbekistan,21.5,UZB,Asia,41,64
 Vanuatu,26.6,VUT,Oceania,-16,167
 Venezuela,19.8,VEN,America,8,-66
 Vietnam,15.5,VNM,Asia,16,106
+Western Sahara,31.18,ESH,Africa,25.306878,-13.188382
 Yemen,31.1,YEM,Asia,15,48
 Zambia,42.8,ZMB,Africa,-15,30
 Zimbabwe,31.3,ZWE,Africa,-20,30

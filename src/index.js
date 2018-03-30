@@ -11,12 +11,12 @@ import * as topojson from 'topojson';
 var margin = {top: 0, left: 20, right: 20, bottom: 0};
 var height = window.innerHeight - margin.top - margin.bottom;
 var width = window.innerWidth - margin.left - margin.right;
-
+var centered;
 var f = d3.format("d");
 
 var colorScale = d3.scaleLinear()
     .domain([0, 50])
-    .range(["#69a2ff", "#000095"]);
+    .range(["#c2ffcf", "#000095"]);
 var textscale = d3.scaleSqrt()
     .domain([6, 50]).range([7, 13]);
 var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([4, 30]);
@@ -36,6 +36,11 @@ var ForceYCombine = d3.forceY(height / 2+20);
 
 var hidden_header = false;
 
+var combine = container.append("button")
+    .attr("id", "combine")
+    .attr("class", "container__button");
+combine.text("All");
+
 var divide = container.append("button")
     .attr("id", "divide")
     .attr("class", "container__button");
@@ -46,10 +51,7 @@ var country_divide = container.append("button")
     .attr("class", "container__button");
 country_divide.text("On a map");
 
-var combine = container.append("button")
-    .attr("id", "combine")
-    .attr("class", "container__button");
-combine.text("All");
+
 
 
 var headerbtn = container.append("button")
@@ -137,7 +139,8 @@ function ready(error, topology, data) {
                 d.properties.name;
             })
             .attr("opacity", "0");
-            map.on("click mouseenter mouseover focus", function(d) {
+            map.on("click", clicked)
+                .on("mouseenter mouseover focus", function(d) {
                 return makeTooltip(d.properties.name, rateById[d.properties.name], "show");
             })
             .on("mouseout", function (d) {
@@ -155,7 +158,7 @@ function ready(error, topology, data) {
         .attr("dy", ".15em")
         .text(function(d) { return codeById[d.properties.name]; })
             .attr("font-size", "8")
-            .attr("opacity", "0");
+            .attr("opacity", "0");//.transition().duration(1500);
 
 
 
@@ -163,6 +166,32 @@ function ready(error, topology, data) {
         var interiors = topojson.mesh(topology, topology.objects.countries1, function (a, b) {
             return a !== b;
         });
+
+        function clicked(d) {
+            var x, y, k;
+            console.log("clicked ", centered);
+            if (d && centered !== d) {
+                var centroid = path.centroid(d);
+                x = centroid[0];
+                y = centroid[1];
+                centered = d;
+                k = 5;
+
+            }else{
+                x = width/2;
+                y = height/2;
+                k = 1;
+                centered = null;
+            }
+
+            svg.selectAll("path")
+                .classed("active", centered && function(d) { return d === centered; });
+
+            svg.transition()
+                .duration(750)
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
+
+        }
 
     var forceXCountryDivide = d3.forceX(function (d) {
         return projection([d.long, d.lat])[0];
@@ -311,7 +340,7 @@ function ready(error, topology, data) {
         map.transition().duration(1500).style("fill", function (d) {
             return colorScale(rateById[d.properties.name]);
         });
-        pathlabel.attr("opacity", "1");
+        pathlabel.attr("opacity", "1").transition().duration(1500);
         svg.selectAll(".container__regionname").attr("display", "none");
     };
 
