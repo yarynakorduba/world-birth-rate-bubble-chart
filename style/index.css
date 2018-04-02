@@ -1,3 +1,4 @@
+text {pointer-events: none;}
 .container__header {
 	color: #010048;
 	text-align: center;
@@ -43,7 +44,7 @@
 
 .container__tooltip {
   position: absolute;
-	z-index: 2;
+  z-index: 2;
   text-align: center;	
   width: 80px;	
   height: auto;		
@@ -53,6 +54,7 @@
   border: 2px solid #999;
   border-radius: 7px;
   font-size: 13px;
+	pointer-events: none;
 }
 
 .container__regionname {
@@ -63,9 +65,17 @@
 	color: #010048;
 }
 
+.container__countryname {
+	fill: white;
+}
+
 .container__path {
 	fill: #cccccc;
 	stroke: #393939;
+}
+
+.container__pathlabel {
+	fill: white;
 }
 
 .info {

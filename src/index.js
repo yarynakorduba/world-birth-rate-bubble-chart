@@ -1,10 +1,10 @@
 import * as d3 from "d3";
-import * as scale from "d3-scale";
+// import * as scale from "d3-scale";
 import {  sort } from "d3-array";
 import { forceSimulation } from "d3-force";
-import { format } from "d3-format";
+// import { format } from "d3-format";
 import { geoAitoff } from "d3-geo-projection";
-import { geoPath } from "d3-geo";
+// import { geoPath } from "d3-geo";
 import * as topojson from 'topojson';
 
 
@@ -12,8 +12,11 @@ var margin = {top: 0, left: 20, right: 20, bottom: 0};
 var height = window.innerHeight - margin.top - margin.bottom;
 var width = window.innerWidth - margin.left - margin.right;
 var centered;
+var hidden_header = false;
+var on_a_map = false;
 var f = d3.format("d");
 
+//scales
 var colorScale = d3.scaleLinear()
     .domain([0, 50])
     .range(["#c2ffcf", "#000095"]);
@@ -22,20 +25,61 @@ var textscale = d3.scaleSqrt()
 var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([4, 30]);
 var scaleMapRadius = d3.scaleSqrt().domain([6, 50]).range([3, 8]);
 
+var projection = geoAitoff()
+    .scale(220)
+    .translate([width / 2, height / 2+50]);
+var path = d3.geoPath().projection(projection);
 
+//Force configurations
+//Display: All
 var ForceXCombine = d3.forceX(width / 2);
 var ForceYCombine = d3.forceY(height / 2+20);
 
+//Display: On a map
+var forceXCountryDivide = d3.forceX(function (d) {
+    return projection([d.long, d.lat])[0];
+});
+var forceYCountryDivide = d3.forceY(function (d) {
+    return projection([d.long, d.lat])[1];
+});
 
- var container = d3.select("body")
+//Display: By region
+var forceXDivide = d3.forceX(function (d) {
+    switch (d.region) {
+        case 'Africa':
+            return 1 / 6 * width + 30;
+        case 'America':
+            return 3 / 7 * width;
+        case 'Asia':
+            return 4 / 7 * width;
+        case 'Europe':
+            return 5 / 7 * width;
+        case 'Oceania':
+            return 6 / 7 * width;
+    }
+});
+var forceYDivide = d3.forceY(function (d) {
+    switch (d.region) {
+        case 'Africa':
+            return 1 / 3 * height+40;
+        case 'America':
+            return 2 / 3 * height+60;
+        case 'Asia':
+            return 1 / 3 * height+10;
+        case 'Europe':
+            return 2 / 3 * height+10;
+        case 'Oceania':
+            return 1 / 3 * height+10;
+    }
+});
+
+
+var container = d3.select("body")
     .append("div")
     .attr("class", "container");
 
 
-
-
-var hidden_header = false;
-
+//Button Configurations
 var combine = container.append("button")
     .attr("id", "combine")
     .attr("class", "container__button");
@@ -51,9 +95,6 @@ var country_divide = container.append("button")
     .attr("class", "container__button");
 country_divide.text("On a map");
 
-
-
-
 var headerbtn = container.append("button")
     .attr("class", "container__button")
     .attr("id", "legendButton")
@@ -68,33 +109,11 @@ var headerbtn = container.append("button")
         });
     });
 
-let tooltip = container.append("div")
-    .attr("class", "container__tooltip")
-    .style("display", "none");
-
-
-var makeTooltip = function (country, birth, state) {
-    tooltip.html("country " + country + "\n" + birth)
-        .style("left", (d3.event.pageX) + "px")
-        .style("top", d3.event.pageY + "px");
-    if (state === "show") {
-
-        tooltip
-            .transition()
-            .duration(2)
-            .style("opacity", .9)
-            .style("display", "block");
-    }
-    else { tooltip.transition().style("display", "none");
-    }
-};
-
  var header = container
     .append("header")
     .attr("class", "container__header");
      header.append("h3")
          .text("Countries birth rate visualization per 1000 population");
-
 
 
  var svg = container.append("svg")
@@ -104,11 +123,27 @@ var makeTooltip = function (country, birth, state) {
     .append("g")
     .attr("class", "container__bubble");
 
-var projection = geoAitoff()
-    .scale(220)
-    .translate([width / 2, height / 2+50]);
 
-var path = d3.geoPath().projection(projection);
+let tooltip = container.append("div")
+    .attr("class", "container__tooltip")
+    .style("display", "none");
+
+var displayTooltip = function (country, birth, state) {
+    tooltip.html("country " + country + "\n" + birth)
+        .style("left", (d3.event.pageX) + "px")
+        .style("top", d3.event.pageY + "px");
+    if (state === "show") {
+
+        tooltip
+            .transition()
+            .duration(1000)
+            .style("opacity", .9)
+            .style("display", "block");
+    }
+    else { tooltip.transition().duration(1000).style("display", "none");
+    }
+};
+
 
 d3.queue()
     .defer(d3.json, "/data/borders.json")
@@ -141,16 +176,16 @@ function ready(error, topology, data) {
             .attr("opacity", "0");
             map.on("click", clicked)
                 .on("mouseenter mouseover focus", function(d) {
-                return makeTooltip(d.properties.name, rateById[d.properties.name], "show");
+                return displayTooltip(d.properties.name, rateById[d.properties.name], "show");
             })
             .on("mouseout", function (d) {
-                return makeTooltip(d.properties.name, rateById[d.properties.name], "hide");
+                return displayTooltip(d.properties.name, rateById[d.properties.name], "hide");
             });
 
         var pathlabel = svg.selectAll(".path-label")
         .data(geojson.features)
         .enter().append("text")
-        .attr("class", "country__pathlabel")
+        .attr("class", "container__pathlabel")
         .attr("transform", function(d) {
             if (longById[d.properties.name]) {
             return "translate(" +
@@ -160,12 +195,9 @@ function ready(error, topology, data) {
             .attr("font-size", "8")
             .attr("opacity", "0");//.transition().duration(1500);
 
-
-
-
         var interiors = topojson.mesh(topology, topology.objects.countries1, function (a, b) {
             return a !== b;
-        });
+        }); //to merge borders
 
         function clicked(d) {
             var x, y, k;
@@ -193,44 +225,6 @@ function ready(error, topology, data) {
 
         }
 
-    var forceXCountryDivide = d3.forceX(function (d) {
-        return projection([d.long, d.lat])[0];
-    });
-
-    var forceYCountryDivide = d3.forceY(function (d) {
-        return projection([d.long, d.lat])[1];
-    });
-
-    var forceXDivide = d3.forceX(function (d) {
-        switch (d.region) {
-            case 'Africa':
-                return 1 / 6 * width + 30;
-            case 'America':
-                return 3 / 7 * width;
-            case 'Asia':
-                return 4 / 7 * width;
-            case 'Europe':
-                return 5 / 7 * width;
-            case 'Oceania':
-                return 6 / 7 * width;
-        }
-    });
-
-    var forceYDivide = d3.forceY(function (d) {
-        switch (d.region) {
-            case 'Africa':
-                return 1 / 3 * height+40;
-            case 'America':
-                return 2 / 3 * height+60;
-            case 'Asia':
-                return 1 / 3 * height+10;
-            case 'Europe':
-                return 2 / 3 * height+10;
-            case 'Oceania':
-                return 1 / 3 * height+10;
-        }
-    });
-
 
 
         var circles = svg.selectAll("country")
@@ -241,9 +235,9 @@ function ready(error, topology, data) {
                 return scaleRadius(d.birth)
             })
             .on("click mouseenter mouseover focus", function(d) {
-                return makeTooltip(d.country, d.birth, "show");})
+                return displayTooltip(d.country, d.birth, "show");})
             .on("mouseout", function (d) {
-                return makeTooltip(d.country, d.birth, "hide");
+                return displayTooltip(d.country, d.birth, "hide");
             });
 
 
@@ -255,7 +249,7 @@ function ready(error, topology, data) {
             .data(data)
             .enter()
             .append("text")
-            .attr("class", "container__countryname") //
+            .attr("class", "container__countryname")
             .text(function (d) {
                 return d.code;
             })
@@ -263,15 +257,14 @@ function ready(error, topology, data) {
                 return f(textscale(d.birth));
             })
             .on("click mouseenter mouseover focus", function(d) {
-                return makeTooltip(d.country, d.birth, "show");})
+                return displayTooltip(d.country, d.birth, "show");})
             .on("mouseout", function (d) {
-                return makeTooltip(d.country, d.birth, "hide");
-            })
-            .attr("fill", "white");
+                return displayTooltip(d.country, d.birth, "hide");
+            });
 
         var simulation = forceSimulation()
-            .force("x", ForceXCombine)
-            .force("y", ForceYCombine)
+            .force("x", ForceXCombine.strength(0.09))
+            .force("y", ForceYCombine.strength(0.09))
             .force("collide", d3.forceCollide(
                 function (d) {
                     return scaleRadius(d.birth);
@@ -300,7 +293,6 @@ function ready(error, topology, data) {
         var datainfo = maxmin.append("div")
             .attr("class", "info__ref")
             .text("Data for visualization was taken from ");
-
         datainfo.append("a")
             .attr("class", "info__link")
             .attr("href", "http://apps.who.int/gho/data/node.main.CBDR107?lang=en")
@@ -308,23 +300,23 @@ function ready(error, topology, data) {
 //End of the box with information
 
 
-
+//Button "On a map" functioning
         country_divide.on("click", function () {
             text.attr("opacity" ,"0");
-            map.attr("opacity", "1");
-            circles.attr("r", function (d) {
+            on_a_map = true;
+            map.attr("opacity", "1").attr("display", "inline");
+            circles.transition().duration(1000).attr("r", function (d) {
             return scaleMapRadius(d.birth);
         });
 
     simulation
-        .force("x", forceXCountryDivide)
-        .force("y", forceYCountryDivide)
+        .force("x", forceXCountryDivide.strength(0.09))
+        .force("y", forceYCountryDivide.strength(0.09))
         .force("collide", d3.forceCollide(
             function (d) {
-                return scaleMapRadius(d.birth)-1;
+                return scaleMapRadius(d.birth);
             }))
-        .alpha(0.5)
-        .restart();
+        .alpha(0.5).restart();
 
         d3.timeout(stylemap,500);
         d3.timeout(stylecircles,1000);
@@ -332,34 +324,39 @@ function ready(error, topology, data) {
 
 });
     var stylecircles = function () {
-
-        circles.transition().duration(1000).attr("opacity", "0");
+        circles.transition().duration(1500).attr("display", "none");
     };
 
     var stylemap = function() {
-        map.transition().duration(1500).style("fill", function (d) {
+        map.transition().duration(1000).style("fill", function (d) {
             return colorScale(rateById[d.properties.name]);
         });
-        pathlabel.attr("opacity", "1").transition().duration(1500);
+        pathlabel.attr("opacity", "1").attr("display", "inline");
         svg.selectAll(".container__regionname").attr("display", "none");
+
     };
 
 
-//Button for common displaying
-
-
-
+//Button "By region" functioning
         divide.on("click", function () {
-            text.attr("opacity" ,"1");
-            map.attr("opacity", "0");
-            pathlabel.attr("opacity", "0");
 
-            circles.attr("r", function (d) {
-                return scaleRadius(d.birth);
-            }).attr("opacity", "1");
+            text.attr("opacity" ,"1");
+            pathlabel.attr("display", "none");
+            if (on_a_map === true) {
+                on_a_map = false;
+                circles.transition().duration(1000)
+                    .attr("display", "inline")
+                    .attr("r", function (d) {
+                        return scaleRadius(d.birth);
+                    });
+                map.transition().duration(500).attr("opacity", 0)
+                    .transition()
+                    .attr("display", "none");
+            }
+
             simulation
-                .force("x", forceXDivide)
-                .force("y", forceYDivide)
+                .force("x", forceXDivide.strength(0.11))
+                .force("y", forceYDivide.strength(0.11))
                 .force("collide", d3.forceCollide(
                     function (d) {
                         return scaleRadius(d.birth);
@@ -371,21 +368,26 @@ function ready(error, topology, data) {
             svg.selectAll(".container__regionname").attr("display", "inline");
         });
 
-//Button for displaying by regions
 
 
+//Button "All" functioning
         combine.on("click", function () {
-            map.attr("opacity", "0");
             text.attr("opacity" ,"1");
-            pathlabel.attr("opacity", "0");
+            pathlabel.attr("display", "none");
+            if (on_a_map === true) {
+                on_a_map = false;
+                    circles.transition().duration(1000)
+                    .attr("display", "inline")
+                    .attr("r", function (d) {
+                            return scaleRadius(d.birth);
+                        });
+                map.transition().duration(1000)
+                    .attr("display", "none");
 
-            circles.attr("r", function (d) {
-                return scaleRadius(d.birth);
-            }).attr("opacity", "1");
-
+            }
             simulation
-                .force("x", ForceXCombine)
-                .force("y", ForceYCombine)
+                .force("x", ForceXCombine.strength(0.07))
+                .force("y", ForceYCombine.strength(0.07))
                 .force("collide", d3.forceCollide(
                     function (d) {
                         return scaleRadius(d.birth);
