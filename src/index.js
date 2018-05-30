@@ -17,11 +17,10 @@ var on_a_map = false;
 var f = d3.format("d");
 
 //scales
-var colorScale = d3.scaleLinear()
-    .domain([0, 50])
-    .range(["#c2ffcf", "#000095"]);
-var textscale = d3.scaleSqrt()
-    .domain([6, 50]).range([7, 13]);
+var colorScale = d3.scaleLinear().domain([0, 50]).range(["#c2ffcf", "#000095"]);
+var xPosScale = d3.scaleLinear().domain([1, 230]).range([300, width-100]);
+var yPosScale = d3.scaleLinear().domain([1,230]).range([height/2-50, height/2+50]);
+var textscale = d3.scaleSqrt().domain([6, 50]).range([7, 13]);
 var scaleRadius = d3.scaleSqrt().domain([6, 50]).range([4, 30]);
 var scaleMapRadius = d3.scaleSqrt().domain([6, 50]).range([3, 8]);
 
@@ -73,30 +72,43 @@ var forceYDivide = d3.forceY(function (d) {
     }
 });
 
+var forceSortXDivide = d3.forceX(function (d) {
+    return xPosScale(d.id);
+});
+var forceSortYDivide = d3.forceY(function (d) {
+    return height/2 + (d.id%5)*5;
+});
+
 
 var container = d3.select("body")
     .append("div")
-    .attr("class", "container");
+    .attr("class", "body__container");
 
 
 //Button Configurations
 var combine = container.append("button")
     .attr("id", "combine")
-    .attr("class", "container__button");
+    .attr("class", "container__button btn btn-blue");
 combine.text("All");
 
 var divide = container.append("button")
     .attr("id", "divide")
-    .attr("class", "container__button");
+    .attr("class", "container__button btn btn-blue");
 divide.text("By region");
+
+var sort_country = container.append("button")
+    .attr("id", "sorted")
+    .attr("class", "container__button btn btn-blue");
+sort_country.text("By rate");
 
 var country_divide = container.append("button")
     .attr("id", "country_divide")
-    .attr("class", "container__button");
+    .attr("class", "container__button btn btn-blue");
 country_divide.text("On a map");
 
+
 var headerbtn = container.append("button")
-    .attr("class", "container__button")
+    .attr("class", "container__button btn btn-blue")
     .attr("id", "legendButton")
     .text("Hide legend")
     .on("click", function() {
@@ -111,7 +123,7 @@ var headerbtn = container.append("button")
 
 var header = container
     .append("header")
-    .attr("class", "container__header");
+    .attr("class", "container__header mt-2 mr-2");
 header.append("h3")
     .text("Countries birth rate visualization per 1000 population");
 
@@ -304,7 +316,7 @@ function ready(error, topology, data) {
 
 //Button "On a map" functioning
     country_divide.on("click", function () {
-        text.attr("opacity" ,"0");
+        text.attr("display" ,"none");
         on_a_map = true;
         map.attr("opacity", "1").attr("display", "inline");
         circles.transition().duration(1000).attr("r", function (d) {
@@ -326,6 +338,36 @@ function ready(error, topology, data) {
 
 
     });
+
+    sort_country.on("click", function () {
+        on_a_map = false;
+        text.attr("display" ,"block");
+        map.transition().duration(500).attr("opacity", 0)
+            .transition()
+            .attr("display", "none");
+        circles.attr("opacity", "1").attr("display", "inline");
+        circles.transition().duration(1000).attr("r", function (d) {
+            return scaleRadius(d.birth);
+        });
+
+
+        simulation
+            .force("x", forceSortXDivide.strength(0.21))
+            .force("y", forceSortYDivide.strength(0.11))
+            .force("collide", d3.forceCollide(
+                function (d) {
+                    return scaleRadius(d.birth)+10;
+                }))
+            .force("charge", d3.forceManyBody().strength(-40))
+            .alpha(0.5)
+            .restart();
+        map.style("fill", "#cccccc");
+        svg.selectAll(".container__regionname").attr("display", "none");
+
+
+    });
+
+
     var stylecircles = function () {
         circles.transition().duration(1500).attr("display", "none");
     };
@@ -343,7 +385,7 @@ function ready(error, topology, data) {
 //Button "By region" functioning
     divide.on("click", function () {
 
-        text.attr("opacity" ,"1");
+        text.attr("display" ,"block");
         pathlabel.attr("display", "none");
         if (on_a_map === true) {
             on_a_map = false;
@@ -377,6 +419,7 @@ function ready(error, topology, data) {
 //Button "All" functioning
     combine.on("click", function () {
         text.attr("opacity" ,"1");
+        text.attr("display" ,"block");
         pathlabel.attr("display", "none");
         if (on_a_map === true) {
             on_a_map = false;
