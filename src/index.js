@@ -109,14 +109,14 @@ var headerbtn = container.append("button")
         });
     });
 
- var header = container
+var header = container
     .append("header")
     .attr("class", "container__header");
-     header.append("h3")
-         .text("Countries birth rate visualization per 1000 population");
+header.append("h3")
+    .text("Countries birth rate visualization per 1000 population");
 
 
- var svg = container.append("svg")
+var svg = container.append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("class", "container__svg")
@@ -163,166 +163,169 @@ function ready(error, topology, data) {
         longById[data.country] = +data.long;
     });
 
-     var geojson = topojson.feature(topology, topology.objects.countries1);
+    var geojson = topojson.feature(topology, topology.objects.countries1);
 
-        var map = svg.selectAll("path")
-            .data(geojson.features)
-            .enter().append("path")
-            .attr("d", path)
-            .attr("class", "container__path")
-            .attr("id", function (d) {
-                d.properties.name;
-            })
-            .attr("opacity", "0");
-            map.on("click", clicked)
-                .on("mouseenter mouseover focus", function(d) {
-                return displayTooltip(d.properties.name, rateById[d.properties.name], "show");
-            })
-            .on("mouseout", function (d) {
-                return displayTooltip(d.properties.name, rateById[d.properties.name], "hide");
-            });
+    var map = svg.selectAll("path")
+        .data(geojson.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("class", "container__path")
+        .attr("id", function (d) {
+            d.properties.name;
+        })
+        .attr("opacity", "0");
+    map.on("click", clicked)
+        .on("mouseenter mouseover focus", function(d) {
+            return displayTooltip(d.properties.name, rateById[d.properties.name], "show");
+        })
+        .on("mouseout", function (d) {
+            return displayTooltip(d.properties.name, rateById[d.properties.name], "hide");
+        });
 
-        var pathlabel = svg.selectAll(".path-label")
+    var pathlabel = svg.selectAll(".path-label")
         .data(geojson.features)
         .enter().append("text")
         .attr("class", "container__pathlabel")
         .attr("transform", function(d) {
             if (longById[d.properties.name]) {
-            return "translate(" +
-            projection([longById[d.properties.name], latById[d.properties.name]]) + ")"; }})
+                return "translate(" +
+                    projection([longById[d.properties.name], latById[d.properties.name]]) + ")"; }})
         .attr("dy", ".15em")
         .text(function(d) { return codeById[d.properties.name]; })
-            .attr("font-size", "8")
-            .attr("opacity", "0");//.transition().duration(1500);
+        .attr("font-size", "8")
+        .attr("opacity", "0");//.transition().duration(1500);
 
-        var interiors = topojson.mesh(topology, topology.objects.countries1, function (a, b) {
-            return a !== b;
-        }); //to merge borders
+    var interiors = topojson.mesh(topology, topology.objects.countries1, function (a, b) {
+        return a !== b;
+    }); //to merge borders
 
-        function clicked(d) {
-            var x, y, k;
-            console.log("clicked ", centered);
-            if (d && centered !== d) {
-                var centroid = path.centroid(d);
-                x = centroid[0];
-                y = centroid[1];
-                centered = d;
-                k = 5;
+    function clicked(d) {
+        var x, y, k;
+        console.log("clicked ", centered);
+        if (d && centered !== d) {
+            var centroid = path.centroid(d);
+            x = centroid[0];
+            y = centroid[1];
+            centered = d;
+            k = 5;
 
-            }else{
-                x = width/2;
-                y = height/2;
-                k = 1;
-                centered = null;
-            }
-
-            svg.selectAll("path")
-                .classed("active", centered && function(d) { return d === centered; });
-
-            svg.transition()
-                .duration(750)
-                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
-
+        }else{
+            x = width/2;
+            y = height/2;
+            k = 1;
+            centered = null;
         }
 
+        svg.selectAll("path")
+            .classed("active", centered && function(d) { return d === centered; });
+
+        svg.transition()
+            .duration(750)
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
+
+    }
 
 
-        var circles = svg.selectAll("country")
-            .data(data)
-            .enter().append("circle")
-            .attr("class", "container__country")
-            .attr("r", function (d) {
-                return scaleRadius(d.birth)
-            })
-            .on("click mouseenter mouseover focus", function(d) {
-                return displayTooltip(d.country, d.birth, "show");})
-            .on("mouseout", function (d) {
-                return displayTooltip(d.country, d.birth, "hide");
-            });
 
-
-        circles.style("fill", function (d) {
-            return colorScale(d.birth);
+    var circles = svg.selectAll("country")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "container__country")
+        .attr("r", function (d) {
+            return scaleRadius(d.birth)
+        })
+        .on("click mouseenter mouseover focus", function(d) {
+            return displayTooltip(d.country, d.birth, "show");})
+        .on("mouseout", function (d) {
+            return displayTooltip(d.country, d.birth, "hide");
         });
 
-        var text = svg.selectAll("country")
-            .data(data)
-            .enter()
-            .append("text")
-            .attr("class", "container__countryname")
-            .text(function (d) {
-                return d.code;
-            })
-            .attr("font-size", function (d) {
-                return f(textscale(d.birth));
-            })
-            .on("click mouseenter mouseover focus", function(d) {
-                return displayTooltip(d.country, d.birth, "show");})
-            .on("mouseout", function (d) {
-                return displayTooltip(d.country, d.birth, "hide");
-            });
 
-        var simulation = forceSimulation()
-            .force("x", ForceXCombine.strength(0.09))
-            .force("y", ForceYCombine.strength(0.09))
-            .force("collide", d3.forceCollide(
-                function (d) {
-                    return scaleRadius(d.birth);
-                })).alpha(0.4);
+    circles.style("fill", function (d) {
+        return colorScale(d.birth);
+    });
+
+    var text = svg.selectAll("country")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "container__countryname")
+        .text(function (d) {
+            return d.code;
+        })
+        .attr("font-size", function (d) {
+            return f(textscale(d.birth));
+        })
+        .on("click mouseenter mouseover focus", function(d) {
+            return displayTooltip(d.country, d.birth, "show");})
+        .on("mouseout", function (d) {
+            return displayTooltip(d.country, d.birth, "hide");
+        });
+
+    var simulation = forceSimulation()
+        .force("x", ForceXCombine.strength(0.1))
+        .force("y", ForceYCombine.strength(0.1))
+        .force("collide", d3.forceCollide(
+            function (d) {
+                return scaleRadius(d.birth);
+            }))
+        .force("charge", d3.forceManyBody().strength(-10))
+        .alpha(0.4);
 
 //The box with information
-        var maxmin = header.data(data)
-            .append("div")
-            .attr("class", "info");
+    var maxmin = header.data(data)
+        .append("div")
+        .attr("class", "info");
 
-        var maxminhead = maxmin.append("h3").text("Bound birth rate values:")
-            .attr("class", "info__caption");
+    var maxminhead = maxmin.append("h3").text("Bound birth rate values:")
+        .attr("class", "info__caption");
 
-        var max = maxmin.append("div").attr("class", "info__value")
-            .text(function (d) {
-                return "maximal value: " + sortingOrder(data)[data.length - 1].country +
-                    " " + sortingOrder(data)[data.length - 1].birth + '\n';
-            });
+    var max = maxmin.append("div").attr("class", "info__value")
+        .text(function (d) {
+            return "maximal value: " + sortingOrder(data)[data.length - 1].country +
+                " " + sortingOrder(data)[data.length - 1].birth + '\n';
+        });
 
-        var min = maxmin.append("div").attr("class", "info__value")
-            .text(function (d) {
-                return "minimal value: " + sortingOrder(data)[0].country + " " +
-                    sortingOrder(data)[0].birth;
-            });
+    var min = maxmin.append("div").attr("class", "info__value")
+        .text(function (d) {
+            return "minimal value: " + sortingOrder(data)[0].country + " " +
+                sortingOrder(data)[0].birth;
+        });
 
-        var datainfo = maxmin.append("div")
-            .attr("class", "info__ref")
-            .text("Data for visualization was taken from ");
-        datainfo.append("a")
-            .attr("class", "info__link")
-            .attr("href", "http://apps.who.int/gho/data/node.main.CBDR107?lang=en")
-            .text("World Health Organization");
+    var datainfo = maxmin.append("div")
+        .attr("class", "info__ref")
+        .text("Data for visualization was taken from ");
+    datainfo.append("a")
+        .attr("class", "info__link")
+        .attr("href", "http://apps.who.int/gho/data/node.main.CBDR107?lang=en")
+        .text("World Health Organization");
 //End of the box with information
 
 
 //Button "On a map" functioning
-        country_divide.on("click", function () {
-            text.attr("opacity" ,"0");
-            on_a_map = true;
-            map.attr("opacity", "1").attr("display", "inline");
-            circles.transition().duration(1000).attr("r", function (d) {
+    country_divide.on("click", function () {
+        text.attr("opacity" ,"0");
+        on_a_map = true;
+        map.attr("opacity", "1").attr("display", "inline");
+        circles.transition().duration(1000).attr("r", function (d) {
             return scaleMapRadius(d.birth);
         });
 
-    simulation
-        .force("x", forceXCountryDivide.strength(0.09))
-        .force("y", forceYCountryDivide.strength(0.09))
-        .force("collide", d3.forceCollide(
-            function (d) {
-                return scaleMapRadius(d.birth);
-            }))
-        .alpha(0.5).restart();
+        simulation
+            .force("x", forceXCountryDivide.strength(0.09))
+            .force("y", forceYCountryDivide.strength(0.09))
+            .force("collide", d3.forceCollide(
+                function (d) {
+                    return scaleMapRadius(d.birth);
+                }))
+            .force("charge", d3.forceManyBody().strength(-10))
+            .alpha(0.5).restart();
 
         d3.timeout(stylemap,500);
         d3.timeout(stylecircles,1000);
 
 
-});
+    });
     var stylecircles = function () {
         circles.transition().duration(1500).attr("display", "none");
     };
@@ -338,98 +341,100 @@ function ready(error, topology, data) {
 
 
 //Button "By region" functioning
-        divide.on("click", function () {
+    divide.on("click", function () {
 
-            text.attr("opacity" ,"1");
-            pathlabel.attr("display", "none");
-            if (on_a_map === true) {
-                on_a_map = false;
-                circles.transition().duration(1000)
-                    .attr("display", "inline")
-                    .attr("r", function (d) {
-                        return scaleRadius(d.birth);
-                    });
-                map.transition().duration(500).attr("opacity", 0)
-                    .transition()
-                    .attr("display", "none");
-            }
+        text.attr("opacity" ,"1");
+        pathlabel.attr("display", "none");
+        if (on_a_map === true) {
+            on_a_map = false;
+            circles.transition().duration(1000)
+                .attr("display", "inline")
+                .attr("r", function (d) {
+                    return scaleRadius(d.birth);
+                });
+            map.transition().duration(500).attr("opacity", 0)
+                .transition()
+                .attr("display", "none");
+        }
 
-            simulation
-                .force("x", forceXDivide.strength(0.11))
-                .force("y", forceYDivide.strength(0.11))
-                .force("collide", d3.forceCollide(
-                    function (d) {
-                        return scaleRadius(d.birth);
-                    }))
-                .alpha(0.5)
-                .restart();
+        simulation
+            .force("x", forceXDivide.strength(0.11))
+            .force("y", forceYDivide.strength(0.11))
+            .force("collide", d3.forceCollide(
+                function (d) {
+                    return scaleRadius(d.birth);
+                }))
+            .force("charge", d3.forceManyBody().strength(-10))
+            .alpha(0.5)
+            .restart();
 
-            map.style("fill", "#cccccc");
-            svg.selectAll(".container__regionname").attr("display", "inline");
-        });
+        map.style("fill", "#cccccc");
+        svg.selectAll(".container__regionname").attr("display", "inline");
+    });
 
 
 
 //Button "All" functioning
-        combine.on("click", function () {
-            text.attr("opacity" ,"1");
-            pathlabel.attr("display", "none");
-            if (on_a_map === true) {
-                on_a_map = false;
-                    circles.transition().duration(1000)
-                    .attr("display", "inline")
-                    .attr("r", function (d) {
-                            return scaleRadius(d.birth);
-                        });
-                map.transition().duration(1000)
-                    .attr("display", "none");
-
-            }
-            simulation
-                .force("x", ForceXCombine.strength(0.07))
-                .force("y", ForceYCombine.strength(0.07))
-                .force("collide", d3.forceCollide(
-                    function (d) {
-                        return scaleRadius(d.birth);
-                    }))
-                .alpha(0.4)
-                .restart();
-
-            map.style("fill", "#cccccc");
-            svg.selectAll(".container__regionname").attr("display", "none");
-        });
-
-
-        simulation.nodes(data)
-            .on("tick", ticked);
-
-        function ticked() {
-            circles
-                .attr("cx", function (d) {
-                    return d.x;
-                })
-                .attr("cy", function (d) {
-                    return d.y;
-                })
-                .attr("id", function (d) {
-                    return d.country
+    combine.on("click", function () {
+        text.attr("opacity" ,"1");
+        pathlabel.attr("display", "none");
+        if (on_a_map === true) {
+            on_a_map = false;
+            circles.transition().duration(1000)
+                .attr("display", "inline")
+                .attr("r", function (d) {
+                    return scaleRadius(d.birth);
                 });
+            map.transition().duration(1000)
+                .attr("display", "none");
 
-            text
-                .attr("x", function (d) {
-                    return d.x - 12;
-                })
-                .attr("y", function (d) {
-                    return d.y + 5;
-                });
         }
+        simulation
+            .force("x", ForceXCombine.strength(0.07))
+            .force("y", ForceYCombine.strength(0.07))
+            .force("collide", d3.forceCollide(
+                function (d) {
+                    return scaleRadius(d.birth) + 0.5;
+                }))
+            .force("charge", d3.forceManyBody().strength(-10))
+            .alpha(0.4)
+            .restart();
+
+        map.style("fill", "#cccccc");
+        svg.selectAll(".container__regionname").attr("display", "none");
+    });
 
 
-        function sortingOrder(data) {
-            return data.sort(function (a, b) {
-                return +a.birth - b.birth;
+    simulation.nodes(data)
+        .on("tick", ticked);
+
+    function ticked() {
+        circles
+            .attr("cx", function (d) {
+                return d.x;
+            })
+            .attr("cy", function (d) {
+                return d.y;
+            })
+            .attr("id", function (d) {
+                return d.country
             });
-        };
+
+        text
+            .attr("x", function (d) {
+                return d.x - 12;
+            })
+            .attr("y", function (d) {
+                return d.y + 5;
+            });
+    }
+
+
+    function sortingOrder(data) {
+        return data.sort(function (a, b) {
+            return +a.birth - b.birth;
+        });
+    };
 
 }
 
@@ -447,4 +452,3 @@ var text_region = d3.csv("/data/regions.csv", function(data) {
         })
         .attr("display", "none");
 });
-

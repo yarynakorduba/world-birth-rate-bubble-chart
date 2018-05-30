@@ -10,7 +10,7 @@ Armenia,13.7,ARM,Europe,40,45
 Australia,13.2,AUS,Oceania,-27,133
 Austria,9.5,AUT,Europe,47.3333,13.3333
 Azerbaijan,17.8,AZE,Europe,40.5,47.5
-Bahamas,15.3,BHS,America,24.25,-76
+The Bahamas,15.3,BHS,America,24.25,-76
 Bahrain,15.2,BHR,Asia,26,50.55
 Bangladesh,20,BGD,Asia,24,90
 Barbados,12.7,BRB,America,13.1667,-59.5333
@@ -18,12 +18,13 @@ Belarus,11,BLR,Europe,53,28
 Belgium,11.7,BEL,Europe,50.8333,4
 Belize,23.4,BLZ,America,17.25,-88.75
 Benin,36.4,BEN,Africa,9.5,2.25
+Bermuda,10.4,BMU,America,32.303553,-64.762289
 Bhutan,19.6,BTN,Asia,27.5,90.5
 Bolivia,25.7,BOL,America,-17,-65
 Bosnia and Herzegovina,9,BIH,Europe,44,18
 Botswana,23.6,BVA,Africa,-22,24
 Brazil,14.9,BRA,America,-10,-55
-Brunei Darussalam,15.5,BRN,Asia,4.5,114.6667
+Brunei,15.5,BRN,Asia,4.5,114.6667
 Bulgaria,9.6,BUL,Europe,43,25
 Burkina Faso,40.9,BFA,Africa,13,-2
 Burundi,44.7,BUR,Africa,-3.5,30
@@ -44,6 +45,7 @@ Ivory Coast,36.6,CIV,Africa,8,-5
 Croatia,9.5,HRV,Europe,45.1667,15.5
 Cuba,9.5,CUB,America,21.5,-80
 Cyprus,11.5,CYP,Europe,35,33
+Northern Cyprus,15,NCP,Europe,35,34
 Czech Republic,11.1,CZE,Europe,49.75,15.5
 North Korea,14.4,PRK,Asia,40,127
 Democratic Republic of the Congo,42.7,COD,Africa,0,25
@@ -58,8 +60,10 @@ Equatorial Guinea,35.4,GNQ,Africa,2,10
 Eritrea,36.7,ERI,Africa,15,39
 Estonia,10.9,EST,Europe,59,26
 Ethiopia,33,ETH,Africa,8,38
+Falkland Islands,10.9,FLK,America,-51.842275,-59.287611
 Fiji,20.4,FJI,Oceania,-18,175
 Finland,11.2,FIN,Europe,64,26
+French Southern and Antarctic Lands,12.3,FRA,Europe,46,2
 France,12.3,FRA,Europe,46,2
 French Guiana,20.46,GUF,America,4.234422,-53.128079
 Gabon,31.9,GAB,Africa,-1,11.75
@@ -91,6 +95,7 @@ Jordan,27,JOR,Asia,31,36
 Kazakhstan,20.5,KAZ,Asia,48,68
 Kenya,34.9,KEN,Africa,1,38
 Kiribati,23.3,KIR,Oceania,1.4167,173
+Kosovo,17.70,XKX,Europe,42.614681, 20.824454
 Kuwait,20.6,KWT,Asia,29.3375,47.6581
 Kyrgyzstan,27.1,KGZ,Asia,41,75
 Laos,26.8,LAO,Asia,18,105
@@ -122,6 +127,7 @@ Namibia,26,NAM,Africa,-22,17
 Nauru,26.4,ZMB,Oceania,-0.5333,166.9167
 Nepal,21,NPL,Africa,28,84
 Netherlands,10.7,NLD,Europe,52.5,5.75
+New Caledonia,5.20,NCL,Oceania,-21.631074,165.983953
 New Zealand,13.8,NZL,Oceania,-41,174
 Nicaragua,22.7,NIC,Africa,13,-85
 Niger,49.7,NER,Africa,16,8
@@ -138,6 +144,7 @@ Peru,19.7,PER,America,-10,-76
 Philippines,24.4,PHL,Asia,13,122
 Poland,10.8,POL,Europe,52,20
 Portugal,8.7,PRT,Europe,39.5,-8
+Puerto Rico,8.1,PRI,America,18.288698,-66.421804
 Qatar,11,QAT,Asia,25.5,51.25
 South Korea,9.6,KOR,Asia,37,127.5
 Moldova,12.1,MDA,Europe,47,29
@@ -175,6 +182,7 @@ Tajikistan,33,TJK,Asia,39,71
 Thailand,10.2,THA,Asia,15,100
 Macedonia,10.7,MKD,Europe,41.8333,22
 East Timor,35.8,TLS,Asia,-8.55,125.5167
+Taiwan,8.3,TWN,Asia,23.803823,120.818543
 Togo,36.4,TGO,Africa,8,1.1667
 Tonga,25.5,TON,Africa,-20,-175
 Trinidad and Tobago,14.5,TTO,Africa,11,-61
@@ -193,6 +201,7 @@ Uzbekistan,21.5,UZB,Asia,41,64
 Vanuatu,26.6,VUT,Oceania,-16,167
 Venezuela,19.8,VEN,America,8,-66
 Vietnam,15.5,VNM,Asia,16,106
+West Bank,32.72,PS,Europe,31.815514,34.779270
 Western Sahara,31.18,ESH,Africa,25.306878,-13.188382
 Yemen,31.1,YEM,Asia,15,48
 Zambia,42.8,ZMB,Africa,-15,30
