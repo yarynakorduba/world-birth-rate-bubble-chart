@@ -46,7 +46,7 @@ var forceYCountryDivide = d3.forceY(function (d) {
 var forceXDivide = d3.forceX(function (d) {
     switch (d.region) {
         case 'Africa':
-            return 1 / 6 * width + 30;
+            return 1 / 6 * width + 60;
         case 'America':
             return 3 / 7 * width;
         case 'Asia':
@@ -185,7 +185,8 @@ function ready(error, topology, data) {
         .attr("id", function (d) {
             d.properties.name;
         })
-        .attr("opacity", "0");
+        .attr("opacity", "0")
+        .attr("display", "none");
     map.on("click", clicked)
         .on("mouseenter mouseover focus", function(d) {
             return displayTooltip(d.properties.name, rateById[d.properties.name], "show");
@@ -246,7 +247,7 @@ function ready(error, topology, data) {
         .attr("r", function (d) {
             return scaleRadius(d.birth)
         })
-        .on("click mouseenter mouseover focus", function(d) {
+        .on("mouseenter mouseover focus", function(d) {
             return displayTooltip(d.country, d.birth, "show");})
         .on("mouseout", function (d) {
             return displayTooltip(d.country, d.birth, "hide");
@@ -356,9 +357,9 @@ function ready(error, topology, data) {
             .force("y", forceSortYDivide.strength(0.11))
             .force("collide", d3.forceCollide(
                 function (d) {
-                    return scaleRadius(d.birth)+10;
+                    return scaleRadius(d.birth)+5;
                 }))
-            .force("charge", d3.forceManyBody().strength(-40))
+            .force("charge", d3.forceManyBody().strength(-20))
             .alpha(0.5)
             .restart();
         map.style("fill", "#cccccc");
@@ -428,7 +429,8 @@ function ready(error, topology, data) {
                 .attr("r", function (d) {
                     return scaleRadius(d.birth);
                 });
-            map.transition().duration(1000)
+            map.transition().duration(500).attr("opacity", 0)
+                .transition()
                 .attr("display", "none");
 
         }
