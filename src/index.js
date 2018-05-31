@@ -11,7 +11,7 @@ import * as topojson from 'topojson';
 var margin = {top: 0, left: 20, right: 20, bottom: 0};
 var height = window.innerHeight - margin.top - margin.bottom;
 var width = window.innerWidth - margin.left - margin.right;
-var centered;
+var centered, timeout1, timeout2;
 var hidden_header = false;
 var on_a_map = false;
 var f = d3.format("d");
@@ -46,7 +46,7 @@ var forceYCountryDivide = d3.forceY(function (d) {
 var forceXDivide = d3.forceX(function (d) {
     switch (d.region) {
         case 'Africa':
-            return 1 / 6 * width + 60;
+            return 1 / 6 * width + 100;
         case 'America':
             return 3 / 7 * width;
         case 'Asia':
@@ -88,27 +88,27 @@ var container = d3.select("body")
 //Button Configurations
 var combine = container.append("button")
     .attr("id", "combine")
-    .attr("class", "container__button btn btn-blue");
+    .attr("class", "container__button btn btn-sm btn-blue");
 combine.text("All");
 
 var divide = container.append("button")
     .attr("id", "divide")
-    .attr("class", "container__button btn btn-blue");
+    .attr("class", "container__button btn btn-sm btn-blue");
 divide.text("By region");
 
 var sort_country = container.append("button")
     .attr("id", "sorted")
-    .attr("class", "container__button btn btn-blue");
+    .attr("class", "container__button btn btn-sm btn-blue");
 sort_country.text("By rate");
 
 var country_divide = container.append("button")
     .attr("id", "country_divide")
-    .attr("class", "container__button btn btn-blue");
+    .attr("class", "container__button btn btn-sm btn-blue");
 country_divide.text("On a map");
 
 
 var headerbtn = container.append("button")
-    .attr("class", "container__button btn btn-blue")
+    .attr("class", "container__button btn btn-sm btn-blue")
     .attr("id", "legendButton")
     .text("Hide legend")
     .on("click", function() {
@@ -124,7 +124,7 @@ var headerbtn = container.append("button")
 var header = container
     .append("header")
     .attr("class", "container__header mt-2 mr-2");
-header.append("h3")
+header.append("div")
     .text("Countries birth rate visualization per 1000 population");
 
 
@@ -251,6 +251,12 @@ function ready(error, topology, data) {
             return displayTooltip(d.country, d.birth, "show");})
         .on("mouseout", function (d) {
             return displayTooltip(d.country, d.birth, "hide");
+        })
+        .on("interrupt", function (d) {
+
+            circles.attr("opacity", "1");
+            circles.attr("display", "inline !important");
+
         });
 
 
@@ -282,7 +288,7 @@ function ready(error, topology, data) {
             function (d) {
                 return scaleRadius(d.birth);
             }))
-        .force("charge", d3.forceManyBody().strength(-10))
+        .force("charge", d3.forceManyBody().strength(-15))
         .alpha(0.4);
 
 //The box with information
@@ -290,7 +296,7 @@ function ready(error, topology, data) {
         .append("div")
         .attr("class", "info");
 
-    var maxminhead = maxmin.append("h3").text("Bound birth rate values:")
+    var maxminhead = maxmin.append("div").text("Bound birth rate values:")
         .attr("class", "info__caption");
 
     var max = maxmin.append("div").attr("class", "info__value")
@@ -317,30 +323,34 @@ function ready(error, topology, data) {
 
 //Button "On a map" functioning
     country_divide.on("click", function () {
+        svg.selectAll("*").interrupt();
         text.attr("display" ,"none");
         on_a_map = true;
         map.attr("opacity", "1").attr("display", "inline");
-        circles.transition().duration(1000).attr("r", function (d) {
+        circles.transition().duration(900).attr("r", function (d) {
             return scaleMapRadius(d.birth);
         });
 
         simulation
-            .force("x", forceXCountryDivide.strength(0.09))
-            .force("y", forceYCountryDivide.strength(0.09))
+            .force("x", forceXCountryDivide.strength(0.1))
+            .force("y", forceYCountryDivide.strength(0.1))
             .force("collide", d3.forceCollide(
                 function (d) {
                     return scaleMapRadius(d.birth);
                 }))
-            .force("charge", d3.forceManyBody().strength(-10))
+            .force("charge", d3.forceManyBody().strength(1))
             .alpha(0.5).restart();
 
-        d3.timeout(stylemap,500);
-        d3.timeout(stylecircles,1000);
+        timeout1 = window.setTimeout(stylemap,500);
+        timeout2 = window.setTimeout(stylecircles,1000);
 
 
     });
 
     sort_country.on("click", function () {
+        window.clearTimeout(timeout1);
+        window.clearTimeout(timeout2);
+        svg.selectAll("*").interrupt();
         on_a_map = false;
         text.attr("display" ,"block");
         map.transition().duration(500).attr("opacity", 0)
@@ -358,8 +368,8 @@ function ready(error, topology, data) {
             .force("collide", d3.forceCollide(
                 function (d) {
                     return scaleRadius(d.birth)+5;
-                }))
-            .force("charge", d3.forceManyBody().strength(-20))
+                }).strength(0.21))
+            .force("charge", d3.forceManyBody().strength(-25))
             .alpha(0.5)
             .restart();
         map.style("fill", "#cccccc");
@@ -370,7 +380,7 @@ function ready(error, topology, data) {
 
 
     var stylecircles = function () {
-        circles.transition().duration(1500).attr("display", "none");
+        circles.transition().duration(1500).attr("opacity", "0");
     };
 
     var stylemap = function() {
@@ -385,13 +395,16 @@ function ready(error, topology, data) {
 
 //Button "By region" functioning
     divide.on("click", function () {
-
+        window.clearTimeout(timeout1);
+        window.clearTimeout(timeout2);
+        svg.selectAll("*").interrupt();
         text.attr("display" ,"block");
         pathlabel.attr("display", "none");
         if (on_a_map === true) {
             on_a_map = false;
             circles.transition().duration(1000)
                 .attr("display", "inline")
+                .attr("opacity", "1")
                 .attr("r", function (d) {
                     return scaleRadius(d.birth);
                 });
@@ -407,7 +420,7 @@ function ready(error, topology, data) {
                 function (d) {
                     return scaleRadius(d.birth);
                 }))
-            .force("charge", d3.forceManyBody().strength(-10))
+            .force("charge", d3.forceManyBody().strength(-20))
             .alpha(0.5)
             .restart();
 
@@ -419,6 +432,9 @@ function ready(error, topology, data) {
 
 //Button "All" functioning
     combine.on("click", function () {
+        window.clearTimeout(timeout1);
+        window.clearTimeout(timeout2);
+        svg.selectAll("*").interrupt();
         text.attr("opacity" ,"1");
         text.attr("display" ,"block");
         pathlabel.attr("display", "none");
@@ -426,6 +442,7 @@ function ready(error, topology, data) {
             on_a_map = false;
             circles.transition().duration(1000)
                 .attr("display", "inline")
+                .attr("opacity", "1")
                 .attr("r", function (d) {
                     return scaleRadius(d.birth);
                 });
