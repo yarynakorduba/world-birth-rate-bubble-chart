@@ -1,10 +1,7 @@
 import * as d3 from "d3";
-// import * as scale from "d3-scale";
 import {  sort } from "d3-array";
 import { forceSimulation } from "d3-force";
-// import { format } from "d3-format";
 import { geoAitoff } from "d3-geo-projection";
-// import { geoPath } from "d3-geo";
 import * as topojson from 'topojson';
 
 
@@ -214,7 +211,6 @@ function ready(error, topology, data) {
 
     function clicked(d) {
         var x, y, k;
-        console.log("clicked ", centered);
         if (d && centered !== d) {
             var centroid = path.centroid(d);
             x = centroid[0];
@@ -506,7 +502,6 @@ var text_region = d3.csv("/data/regions.csv", function(data) {
         .append("text")
         .attr("class", "container__regionname")
         .attr("transform", function (d) {
-            console.log(d.region + " " + d.posx*width + " " + d.posy*height);
             return "translate(" + Math.round(d.posx*width) + "," + Math.round(d.posy*height) + ")";
         })
         .text(function(d) {
