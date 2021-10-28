@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
-  "homepage": "http://gitname.github.io/world-birth-rate-bubble-chart",
+  "homepage": "https://yarynakorduba.github.io/world-birth-rate-bubble-chart/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch & serve",
